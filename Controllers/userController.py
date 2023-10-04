@@ -14,9 +14,11 @@ class ControllerUser:
         self.ventana_principal = ventana_principal
         self.vista.btn_cerrar.clicked.connect(self.cerrar)
         self.vista.btn_logear.clicked.connect(self.logear)
+        self.vista.btn_mostrar.clicked.connect(self.mostrar_pass)
         self.vista.label_info.hide()
 
     def logear(self):
+        '''metodo para logear usuauarios'''
         usuario = self.vista.txt_user.text()
         password = self.vista.txt_password.text()
 
@@ -28,6 +30,7 @@ class ControllerUser:
                 self.vista.label_info.show()
 
     def mostrar_vista_formulario(self):
+        '''mostrar la ventana de crear '''
         self.ventana_principal.close()
         self.Fo = QtWidgets.QMainWindow()
         self.ui = Ui_Viewformulario()
@@ -37,3 +40,9 @@ class ControllerUser:
 
     def cerrar(self):
         self.ventana_principal.close()
+
+    def mostrar_pass(self):
+        if self.vista.txt_password.echoMode() == QtWidgets.QLineEdit.Password:
+            self.vista.txt_password.setEchoMode(QtWidgets.QLineEdit.Normal)
+        else:
+            self.vista.txt_password.setEchoMode(QtWidgets.QLineEdit.Password)

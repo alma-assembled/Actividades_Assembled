@@ -15,6 +15,7 @@ class Ui_Viewformulario(object):
     def setupUi(self, Viewformulario):
         Viewformulario.setObjectName("Viewformulario")
         Viewformulario.resize(637, 684)
+        Viewformulario.setWindowFlags(QtCore.Qt.FramelessWindowHint)
         Viewformulario.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.centralwidget = QtWidgets.QWidget(Viewformulario)
         self.centralwidget.setObjectName("centralwidget")

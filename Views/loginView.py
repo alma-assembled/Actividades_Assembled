@@ -14,11 +14,11 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_ViewLogin(object):
     def setupUi(self, ViewLogin):
         ViewLogin.setObjectName("ViewLogin")
-        ViewLogin.resize(445, 550)
+        ViewLogin.resize(423, 550)
         ViewLogin.setWindowFlags(QtCore.Qt.FramelessWindowHint)
         ViewLogin.setAttribute(QtCore.Qt.WA_TranslucentBackground)
         self.widget = QtWidgets.QWidget(ViewLogin)
-        self.widget.setGeometry(QtCore.QRect(50, 30, 370, 480))
+        self.widget.setGeometry(QtCore.QRect(40, 10, 370, 480))
         self.widget.setStyleSheet("QPushButton#pushButton{    \n"
 "    background-color: qlineargradient(spread:pad, x1:0, y1:0.505682, x2:1, y2:0.477, stop:0 rgba(20, 47, 78, 219), stop:1 rgba(85, 98, 112, 226));\n"
 "    color:rgba(255, 255, 255, 210);\n"
@@ -53,14 +53,15 @@ class Ui_ViewLogin(object):
         self.label.setText("")
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(self.widget)
-        self.label_2.setGeometry(QtCore.QRect(30, 30, 300, 420))
+        self.label_2.setGeometry(QtCore.QRect(30, 50, 301, 411))
         self.label_2.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
         self.label_2.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.715909, stop:0 rgba(0, 0, 0, 9), stop:0.375 rgba(0, 0, 0, 50), stop:0.835227 rgba(0, 0, 0, 75));\n"
+"background-image: url(:/images/background.png);\n"
 "border-radius:20px;")
         self.label_2.setText("")
         self.label_2.setObjectName("label_2")
         self.label_title = QtWidgets.QLabel(self.widget)
-        self.label_title.setGeometry(QtCore.QRect(100, 100, 161, 40))
+        self.label_title.setGeometry(QtCore.QRect(100, 80, 161, 40))
         font = QtGui.QFont()
         font.setPointSize(20)
         font.setBold(True)
@@ -98,20 +99,28 @@ class Ui_ViewLogin(object):
         font.setBold(True)
         font.setWeight(75)
         self.btn_logear.setFont(font)
+        self.btn_logear.setStyleSheet(" background: linear-gradient(360deg,#03e9f4);")
         self.btn_logear.setObjectName("btn_logear")
         self.label_info = QtWidgets.QLabel(self.widget)
         self.label_info.setEnabled(True)
-        self.label_info.setGeometry(QtCore.QRect(140, 400, 91, 20))
+        self.label_info.setGeometry(QtCore.QRect(140, 379, 101, 41))
         self.label_info.setStyleSheet("color:rgba(255, 255, 255, 210);")
         self.label_info.setObjectName("label_info")
         self.btn_cerrar = QtWidgets.QPushButton(self.widget)
-        self.btn_cerrar.setGeometry(QtCore.QRect(270, 40, 41, 31))
+        self.btn_cerrar.setGeometry(QtCore.QRect(280, 40, 41, 31))
         self.btn_cerrar.setStyleSheet("\n"
 "outline:none;\n"
 "  font-size: 20px;\n"
 "  background: transparent;\n"
 "color:rgba(255, 255, 255, 210);")
         self.btn_cerrar.setObjectName("btn_cerrar")
+        self.btn_mostrar = QtWidgets.QPushButton(self.widget)
+        self.btn_mostrar.setGeometry(QtCore.QRect(250, 230, 31, 31))
+        self.btn_mostrar.setStyleSheet("image: url(:/img/ojo.png);\n"
+"background-color: transparent;\n"
+"")
+        self.btn_mostrar.setText("")
+        self.btn_mostrar.setObjectName("btn_mostrar")
 
         self.retranslateUi(ViewLogin)
         QtCore.QMetaObject.connectSlotsByName(ViewLogin)
@@ -125,7 +134,9 @@ class Ui_ViewLogin(object):
         self.btn_logear.setText(_translate("ViewLogin", "Aceptar"))
         self.label_info.setText(_translate("ViewLogin", "Datos incorrectos"))
         self.btn_cerrar.setText(_translate("ViewLogin", "X"))
-import Views.res
+        self.btn_mostrar.setWhatsThis(_translate("ViewLogin", "<html><head/><body><p><br/></p></body></html>"))
+import Resources.ojo_rc
+import Resources.res_rc
 
 
 if __name__ == "__main__":

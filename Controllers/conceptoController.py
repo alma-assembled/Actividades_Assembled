@@ -21,6 +21,7 @@ class ControllerConcepto:
         self.vista.btn_box.rejected.connect(self.cerrar) # type: ignore
 
     def guardarConcepto(self):
+        '''metodo para guardar nuevos conceptos'''
         self.model_departamento = ModelDepartamento()
         id_departamento = self.model_departamento.baseDepartamentos_by_name(self.vista.cb_departamento.currentText())
         self.model.CatalogoConceptosInsert( id_departamento[0], self.vista.txt_concepto.toPlainText().upper()) 

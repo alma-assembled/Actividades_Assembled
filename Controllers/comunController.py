@@ -6,6 +6,9 @@ class ControllerComun:
      pass   
 
     def llenarCbDepartameto(self, comboBox):
+        '''
+        Llenar el combo box: departamentos
+        '''
         self.model =ModelDepartamento()
         departamentos_list =  self.model.baseDepartamentosAll()
 
@@ -14,6 +17,9 @@ class ControllerComun:
             comboBox.addItem(departamento.departemanto) 
 
     def llenarCbConceptos(self, comboBox, idDepartameto):
+        '''
+        Llenar el combo box: conceptos
+        '''
         comboBox.clear() 
         self.model =ModelCatalagoConceptos()
         conceptos_list =  self.model.catalagoConceptosByDepartamento(idDepartameto)
