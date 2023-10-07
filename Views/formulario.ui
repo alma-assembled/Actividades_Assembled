@@ -37,9 +37,9 @@
    <widget class="QLineEdit" name="txt_horasMinutos">
     <property name="geometry">
      <rect>
-      <x>400</x>
-      <y>320</y>
-      <width>221</width>
+      <x>510</x>
+      <y>360</y>
+      <width>71</width>
       <height>41</height>
      </rect>
     </property>
@@ -58,33 +58,37 @@ color: rgb(84, 84, 84);</string>
      <string/>
     </property>
     <property name="placeholderText">
-     <string>HORAS O MINUTOS</string>
+     <string>TIEMPO</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="txt_op">
     <property name="geometry">
      <rect>
       <x>170</x>
-      <y>80</y>
+      <y>74</y>
       <width>130</width>
-      <height>36</height>
+      <height>32</height>
      </rect>
     </property>
     <property name="font">
      <font>
+      <family>Arial</family>
       <pointsize>-1</pointsize>
      </font>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::TabFocus</enum>
     </property>
     <property name="styleSheet">
      <string notr="true">width: 100%;
   padding: 10px 0;
-  font-size: 16px;
-  color: #fff;
+  font-size: 12px;
+  color: rgb(6, 91, 103);
   border: none;
   outline: none;
   background: transparent;
 border-bottom: 2px solid rgb(118, 118, 118) ;
-color: rgb(84, 84, 84);</string>
+color: rgb(6, 91, 103);</string>
     </property>
     <property name="text">
      <string/>
@@ -119,11 +123,22 @@ color: rgb(84, 84, 84);</string>
       <x>170</x>
       <y>40</y>
       <width>561</width>
-      <height>28</height>
+      <height>24</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>-1</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::TabFocus</enum>
+    </property>
     <property name="styleSheet">
-     <string notr="true">  font-size: 16px;
+     <string notr="true">  font-size: 12px;
 color: rgb(6, 91, 103);
 </string>
     </property>
@@ -138,21 +153,30 @@ color: rgb(6, 91, 103);
     <property name="geometry">
      <rect>
       <x>300</x>
-      <y>80</y>
+      <y>74</y>
       <width>440</width>
-      <height>36</height>
+      <height>32</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>-1</pointsize>
+     </font>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::TabFocus</enum>
     </property>
     <property name="styleSheet">
      <string notr="true">width: 100%;
   padding: 10px 0;
-  font-size: 16px;
-  color: #fff;
+  font-size: 12px;
+  color: rgb(6, 91, 103);
   border: none;
   outline: none;
   background: transparent;
 border-bottom: 2px solid rgb(118, 118, 118) ;
-color: rgb(84, 84, 84);</string>
+color: rgb(6, 91, 103);</string>
     </property>
     <property name="text">
      <string/>
@@ -172,7 +196,7 @@ color: rgb(84, 84, 84);</string>
     </property>
     <property name="styleSheet">
      <string notr="true">  font-size: 16px;
-color: rgb(84, 84, 84);</string>
+color: rgb(6, 91, 103);;</string>
     </property>
     <property name="text">
      <string>DEPARTAMENTO</string>
@@ -182,14 +206,14 @@ color: rgb(84, 84, 84);</string>
     <property name="geometry">
      <rect>
       <x>170</x>
-      <y>280</y>
-      <width>91</width>
-      <height>41</height>
+      <y>260</y>
+      <width>92</width>
+      <height>28</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">  font-size: 16px;
-color: rgb(84, 84, 84);</string>
+     <string notr="true">  font-size: 12px;
+color: rgb(6, 91, 103);</string>
     </property>
     <property name="text">
      <string>CONCEPTO</string>
@@ -198,8 +222,8 @@ color: rgb(84, 84, 84);</string>
    <widget class="QComboBox" name="cb_concepto">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>280</y>
+      <x>330</x>
+      <y>310</y>
       <width>241</width>
       <height>31</height>
      </rect>
@@ -212,8 +236,8 @@ color: rgb(84, 84, 84);</string>
    <widget class="QPushButton" name="btn_concepto">
     <property name="geometry">
      <rect>
-      <x>520</x>
-      <y>280</y>
+      <x>600</x>
+      <y>330</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -228,8 +252,8 @@ color: rgb(84, 84, 84);</string>
    <widget class="QRadioButton" name="rb_horas">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>320</y>
+      <x>340</x>
+      <y>360</y>
       <width>82</width>
       <height>31</height>
      </rect>
@@ -241,8 +265,8 @@ color: rgb(84, 84, 84);</string>
    <widget class="QRadioButton" name="rb_minutos">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>320</y>
+      <x>430</x>
+      <y>360</y>
       <width>82</width>
       <height>31</height>
      </rect>
@@ -271,7 +295,7 @@ color: rgb(84, 84, 84);</string>
    <widget class="QPushButton" name="btn_agregarActividad">
     <property name="geometry">
      <rect>
-      <x>310</x>
+      <x>600</x>
       <y>370</y>
       <width>141</width>
       <height>31</height>
@@ -306,7 +330,7 @@ color: rgb(84, 84, 84);</string>
      <rect>
       <x>170</x>
       <y>230</y>
-      <width>300</width>
+      <width>451</width>
       <height>30</height>
      </rect>
     </property>
@@ -327,15 +351,19 @@ color: rgb(84, 84, 84);</string>
     <property name="geometry">
      <rect>
       <x>640</x>
-      <y>3</y>
+      <y>6</y>
       <width>100</width>
-      <height>28</height>
+      <height>24</height>
      </rect>
     </property>
     <property name="font">
      <font>
+      <family>Arial</family>
       <pointsize>12</pointsize>
      </font>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::TabFocus</enum>
     </property>
     <property name="styleSheet">
      <string notr="true"> color: rgb(6, 91, 103);
@@ -365,18 +393,19 @@ color: rgb(84, 84, 84);</string>
     <property name="geometry">
      <rect>
       <x>170</x>
-      <y>160</y>
+      <y>142</y>
       <width>570</width>
-      <height>32</height>
+      <height>28</height>
      </rect>
     </property>
     <property name="font">
      <font>
+      <family>Arial</family>
       <pointsize>12</pointsize>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true"> color: inherit;
+     <string notr="true"> color: rgb(6, 91, 103);;
     background-color: var(--option-bg);</string>
     </property>
    </widget>
@@ -384,14 +413,22 @@ color: rgb(84, 84, 84);</string>
     <property name="geometry">
      <rect>
       <x>170</x>
-      <y>130</y>
+      <y>114</y>
       <width>110</width>
-      <height>28</height>
+      <height>24</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>-1</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
     <property name="styleSheet">
-     <string notr="true">  font-size: 16px;
-color: rgb(84, 84, 84);</string>
+     <string notr="true">  font-size: 12px;
+color: rgb(6, 91, 103);</string>
     </property>
     <property name="text">
      <string>PRODUCTOS</string>
