@@ -32,7 +32,7 @@ class ControllerFormulario:
         self.model_base_conceptos = ModelBaseConceptos()
         #INICIAL
         self.vista.btn_concepto.clicked.connect(self.mostrar_vista_concepto)
-        self.vista.btn_cerrar.clicked.connect(self.cerrar)
+        #self.vista.btn_cerrar.clicked.connect(self.cerrar)
         self.vista.cb_departamento.currentIndexChanged.connect(self.evntChangedCbConcepto)
         self.vista.txt_op.editingFinished.connect(self.evtEditingFinishedOpLLenarInfo)
         self.vista.btn_agregarActividad.clicked.connect(self.evtAgregarActididad)
@@ -107,7 +107,7 @@ class ControllerFormulario:
         self.hora_inicial = datetime.datetime.now().time()
         print("hora inicial:", self.hora_inicial )
         self.fecha_actual = QDate.currentDate()
-        self.vista.dateEdit.setDate(self.fecha_actual )
+        self.vista.dte_fechoy.setDate(self.fecha_actual )
 
         
         
@@ -218,7 +218,7 @@ class ControllerFormulario:
         num_filas = modelo.rowCount()
         num_columnas = modelo.columnCount()
 
-        fecha= self.vista.dateEdit.date()
+        fecha= self.vista.dte_fechoy.date()
         fecha_text = fecha.toString('yyyy-MM-dd')
         hora_i = (str(fecha_text) +" "+ str(self.hora_inicial))
         hora_f = (str(fecha_text) +" "+ str(datetime.datetime.now().time()))
