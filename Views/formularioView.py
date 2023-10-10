@@ -11,133 +11,206 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_Viewformulario(object):
-    def setupUi(self, Viewformulario):
-        Viewformulario.setObjectName("Viewformulario")
-        Viewformulario.resize(752, 684)
+class Ui_vfm_registroActs(object):
+    def setupUi(self, vfm_registroActs):
+        vfm_registroActs.setObjectName("vfm_registroActs")
+        vfm_registroActs.resize(752, 684)
         font = QtGui.QFont()
         font.setFamily("Arial")
         font.setPointSize(19)
-        Viewformulario.setFont(font)
-        Viewformulario.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.centralwidget = QtWidgets.QWidget(Viewformulario)
-        self.centralwidget.setObjectName("centralwidget")
-        self.gridLayoutWidget = QtWidgets.QWidget(self.centralwidget)
+        vfm_registroActs.setFont(font)
+        vfm_registroActs.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.vfm_registroActs_body = QtWidgets.QWidget(vfm_registroActs)
+        self.vfm_registroActs_body.setObjectName("vfm_registroActs_body")
+        self.gridLayoutWidget = QtWidgets.QWidget(self.vfm_registroActs_body)
         self.gridLayoutWidget.setGeometry(QtCore.QRect(0, 0, 2, 2))
         self.gridLayoutWidget.setObjectName("gridLayoutWidget")
         self.gridLayout = QtWidgets.QGridLayout(self.gridLayoutWidget)
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
         self.gridLayout.setObjectName("gridLayout")
-        self.txt_horasMinutos = QtWidgets.QLineEdit(self.centralwidget)
-        self.txt_horasMinutos.setGeometry(QtCore.QRect(400, 320, 221, 41))
-        self.txt_horasMinutos.setStyleSheet("width: 100%;\n"
+        self.txt_tiempo = QtWidgets.QLineEdit(self.vfm_registroActs_body)
+        self.txt_tiempo.setGeometry(QtCore.QRect(170, 328, 50, 32))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(-1)
+        self.txt_tiempo.setFont(font)
+        self.txt_tiempo.setFocusPolicy(QtCore.Qt.TabFocus)
+        self.txt_tiempo.setStyleSheet("width: 100%;\n"
 "  padding: 10px 0;\n"
-"  font-size: 16px;\n"
-"  color: #fff;\n"
+"  font-size: 12px;\n"
+"  color: rgb(6, 91, 103);\n"
 "  border: none;\n"
 "  outline: none;\n"
 "  background: transparent;\n"
 "border-bottom: 2px solid rgb(118, 118, 118) ;\n"
-"color: rgb(84, 84, 84);")
-        self.txt_horasMinutos.setText("")
-        self.txt_horasMinutos.setObjectName("txt_horasMinutos")
-        self.txt_op = QtWidgets.QLineEdit(self.centralwidget)
-        self.txt_op.setGeometry(QtCore.QRect(170, 80, 130, 36))
+"color: rgb(6, 91, 103);")
+        self.txt_tiempo.setText("")
+        self.txt_tiempo.setObjectName("txt_tiempo")
+        self.txt_op = QtWidgets.QLineEdit(self.vfm_registroActs_body)
+        self.txt_op.setGeometry(QtCore.QRect(170, 74, 130, 32))
         font = QtGui.QFont()
+        font.setFamily("Arial")
         font.setPointSize(-1)
         self.txt_op.setFont(font)
+        self.txt_op.setCursor(QtGui.QCursor(QtCore.Qt.IBeamCursor))
+        self.txt_op.setFocusPolicy(QtCore.Qt.TabFocus)
         self.txt_op.setStyleSheet("width: 100%;\n"
 "  padding: 10px 0;\n"
-"  font-size: 16px;\n"
-"  color: #fff;\n"
+"  font-size: 12px;\n"
+"  color: rgb(6, 91, 103);\n"
 "  border: none;\n"
 "  outline: none;\n"
 "  background: transparent;\n"
 "border-bottom: 2px solid rgb(118, 118, 118) ;\n"
-"color: rgb(84, 84, 84);")
+"color: rgb(6, 91, 103);")
         self.txt_op.setText("")
         self.txt_op.setFrame(True)
         self.txt_op.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.txt_op.setObjectName("txt_op")
-        self.hfr__Frame1 = QtWidgets.QFrame(self.centralwidget)
-        self.hfr__Frame1.setGeometry(QtCore.QRect(0, 0, 160, 741))
-        self.hfr__Frame1.setStyleSheet("background-color: rgb(6, 91, 103);")
-        self.hfr__Frame1.setObjectName("hfr__Frame1")
-        self.horizontalLayout = QtWidgets.QHBoxLayout(self.hfr__Frame1)
+        self.frm_left = QtWidgets.QFrame(self.vfm_registroActs_body)
+        self.frm_left.setEnabled(True)
+        self.frm_left.setGeometry(QtCore.QRect(0, 0, 160, 670))
+        self.frm_left.setStyleSheet("background-color: rgb(6, 91, 103);")
+        self.frm_left.setObjectName("frm_left")
+        self.horizontalLayout = QtWidgets.QHBoxLayout(self.frm_left)
         self.horizontalLayout.setObjectName("horizontalLayout")
-        self.txt_nombre = QtWidgets.QLabel(self.centralwidget)
-        self.txt_nombre.setGeometry(QtCore.QRect(170, 40, 561, 28))
-        self.txt_nombre.setStyleSheet("  font-size: 16px;\n"
+        self.lbl_logoAayn = QtWidgets.QLabel(self.frm_left)
+        self.lbl_logoAayn.setEnabled(True)
+        self.lbl_logoAayn.setText("")
+        self.lbl_logoAayn.setTextFormat(QtCore.Qt.PlainText)
+        self.lbl_logoAayn.setPixmap(QtGui.QPixmap("Logo_Verical_Blanco.png"))
+        self.lbl_logoAayn.setScaledContents(False)
+        self.lbl_logoAayn.setAlignment(QtCore.Qt.AlignHCenter|QtCore.Qt.AlignTop)
+        self.lbl_logoAayn.setObjectName("lbl_logoAayn")
+        self.horizontalLayout.addWidget(self.lbl_logoAayn)
+        self.lbl_nombre = QtWidgets.QLabel(self.vfm_registroActs_body)
+        self.lbl_nombre.setGeometry(QtCore.QRect(170, 40, 561, 24))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(75)
+        self.lbl_nombre.setFont(font)
+        self.lbl_nombre.setFocusPolicy(QtCore.Qt.TabFocus)
+        self.lbl_nombre.setStyleSheet("  font-size: 12px;\n"
 "color: rgb(6, 91, 103);\n"
 "")
-        self.txt_nombre.setObjectName("txt_nombre")
-        self.txt_cliente = QtWidgets.QLineEdit(self.centralwidget)
+        self.lbl_nombre.setObjectName("lbl_nombre")
+        self.txt_cliente = QtWidgets.QLineEdit(self.vfm_registroActs_body)
         self.txt_cliente.setEnabled(False)
-        self.txt_cliente.setGeometry(QtCore.QRect(300, 80, 440, 36))
+        self.txt_cliente.setGeometry(QtCore.QRect(300, 74, 440, 32))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(-1)
+        self.txt_cliente.setFont(font)
+        self.txt_cliente.setFocusPolicy(QtCore.Qt.TabFocus)
         self.txt_cliente.setStyleSheet("width: 100%;\n"
 "  padding: 10px 0;\n"
-"  font-size: 16px;\n"
-"  color: #fff;\n"
+"  font-size: 12px;\n"
+"  color: rgb(6, 91, 103);\n"
 "  border: none;\n"
 "  outline: none;\n"
 "  background: transparent;\n"
 "border-bottom: 2px solid rgb(118, 118, 118) ;\n"
-"color: rgb(84, 84, 84);")
+"color: rgb(6, 91, 103);")
         self.txt_cliente.setText("")
         self.txt_cliente.setObjectName("txt_cliente")
-        self.label_3 = QtWidgets.QLabel(self.centralwidget)
-        self.label_3.setGeometry(QtCore.QRect(170, 196, 138, 28))
-        self.label_3.setStyleSheet("  font-size: 16px;\n"
-"color: rgb(84, 84, 84);")
-        self.label_3.setObjectName("label_3")
-        self.label_4 = QtWidgets.QLabel(self.centralwidget)
-        self.label_4.setGeometry(QtCore.QRect(170, 280, 91, 41))
-        self.label_4.setStyleSheet("  font-size: 16px;\n"
-"color: rgb(84, 84, 84);")
-        self.label_4.setObjectName("label_4")
-        self.cb_concepto = QtWidgets.QComboBox(self.centralwidget)
-        self.cb_concepto.setGeometry(QtCore.QRect(270, 280, 241, 31))
-        self.cb_concepto.setStyleSheet(" color: inherit;\n"
-"    background-color: var(--option-bg);")
-        self.cb_concepto.setObjectName("cb_concepto")
-        self.btn_concepto = QtWidgets.QPushButton(self.centralwidget)
-        self.btn_concepto.setGeometry(QtCore.QRect(520, 280, 101, 31))
-        self.btn_concepto.setStyleSheet(" background: linear-gradient(360deg,#03e9f4);")
-        self.btn_concepto.setObjectName("btn_concepto")
-        self.rb_horas = QtWidgets.QRadioButton(self.centralwidget)
-        self.rb_horas.setGeometry(QtCore.QRect(190, 320, 82, 31))
-        self.rb_horas.setObjectName("rb_horas")
-        self.rb_minutos = QtWidgets.QRadioButton(self.centralwidget)
-        self.rb_minutos.setGeometry(QtCore.QRect(300, 320, 82, 31))
-        self.rb_minutos.setObjectName("rb_minutos")
-        self.btn_guardar = QtWidgets.QPushButton(self.centralwidget)
-        self.btn_guardar.setGeometry(QtCore.QRect(280, 610, 171, 41))
-        self.btn_guardar.setStyleSheet(" background: linear-gradient(360deg,#03e9f4);\n"
+        self.lbl_departamento = QtWidgets.QLabel(self.vfm_registroActs_body)
+        self.lbl_departamento.setGeometry(QtCore.QRect(170, 180, 100, 24))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(75)
+        self.lbl_departamento.setFont(font)
+        self.lbl_departamento.setStyleSheet("  font-size: 12px;\n"
+"color: rgb(6, 91, 103);;")
+        self.lbl_departamento.setObjectName("lbl_departamento")
+        self.lbl_actividad = QtWidgets.QLabel(self.vfm_registroActs_body)
+        self.lbl_actividad.setGeometry(QtCore.QRect(170, 242, 72, 24))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(75)
+        self.lbl_actividad.setFont(font)
+        self.lbl_actividad.setStyleSheet("  font-size: 12px;\n"
+"color: rgb(6, 91, 103);")
+        self.lbl_actividad.setObjectName("lbl_actividad")
+        self.cbb_actividad = QtWidgets.QComboBox(self.vfm_registroActs_body)
+        self.cbb_actividad.setGeometry(QtCore.QRect(170, 272, 460, 28))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(12)
+        self.cbb_actividad.setFont(font)
+        self.cbb_actividad.setStyleSheet(" color: rgb(255, 255, 255);\n"
+"    background-color: rgb(6, 91, 103);")
+        self.cbb_actividad.setObjectName("cbb_actividad")
+        self.btn_actividad = QtWidgets.QPushButton(self.vfm_registroActs_body)
+        self.btn_actividad.setGeometry(QtCore.QRect(656, 272, 84, 28))
+        self.btn_actividad.setStyleSheet(" background:rgb(6, 91, 103);\n"
+"color: rgb(255, 255, 255);")
+        self.btn_actividad.setObjectName("btn_actividad")
+        self.rbt_horas = QtWidgets.QRadioButton(self.vfm_registroActs_body)
+        self.rbt_horas.setGeometry(QtCore.QRect(240, 310, 60, 24))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(8)
+        self.rbt_horas.setFont(font)
+        self.rbt_horas.setStyleSheet("color: rgb(6, 91, 103);\n"
+"indicator { background-color: red; }")
+        self.rbt_horas.setObjectName("rbt_horas")
+        self.rbt_minutos = QtWidgets.QRadioButton(self.vfm_registroActs_body)
+        self.rbt_minutos.setGeometry(QtCore.QRect(240, 340, 70, 24))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        self.rbt_minutos.setFont(font)
+        self.rbt_minutos.setStyleSheet("color: rgb(6, 91, 103);\n"
+"indicator { background-color: red; }")
+        self.rbt_minutos.setObjectName("rbt_minutos")
+        self.btn_guardar = QtWidgets.QPushButton(self.vfm_registroActs_body)
+        self.btn_guardar.setGeometry(QtCore.QRect(600, 630, 140, 28))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        self.btn_guardar.setFont(font)
+        self.btn_guardar.setStyleSheet("color: rgb(255, 255, 255);\n"
+" background: rgb(6, 91, 103);\n"
 "")
         self.btn_guardar.setObjectName("btn_guardar")
-        self.btn_agregarActividad = QtWidgets.QPushButton(self.centralwidget)
-        self.btn_agregarActividad.setGeometry(QtCore.QRect(310, 370, 141, 31))
-        self.btn_agregarActividad.setStyleSheet("\n"
-"  background: linear-gradient(360deg,#03e9f4);")
-        self.btn_agregarActividad.setObjectName("btn_agregarActividad")
-        self.btn_quitar = QtWidgets.QPushButton(self.centralwidget)
-        self.btn_quitar.setGeometry(QtCore.QRect(520, 590, 111, 31))
-        self.btn_quitar.setStyleSheet(" background: linear-gradient(360deg,#03e9f4);")
+        self.btn_agregaAct = QtWidgets.QPushButton(self.vfm_registroActs_body)
+        self.btn_agregaAct.setGeometry(QtCore.QRect(600, 328, 141, 28))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(8)
+        self.btn_agregaAct.setFont(font)
+        self.btn_agregaAct.setStyleSheet("color: rgb(255, 255, 255);\n"
+"  background: rgb(6, 91, 103);")
+        self.btn_agregaAct.setObjectName("btn_agregaAct")
+        self.btn_quitar = QtWidgets.QPushButton(self.vfm_registroActs_body)
+        self.btn_quitar.setGeometry(QtCore.QRect(170, 630, 60, 28))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        self.btn_quitar.setFont(font)
+        self.btn_quitar.setStyleSheet("color: rgb(255,255,255);\n"
+" background: rgb(6, 91, 103);")
         self.btn_quitar.setObjectName("btn_quitar")
-        self.cb_departamento = QtWidgets.QComboBox(self.centralwidget)
-        self.cb_departamento.setGeometry(QtCore.QRect(170, 230, 300, 30))
+        self.cbb_departamento = QtWidgets.QComboBox(self.vfm_registroActs_body)
+        self.cbb_departamento.setGeometry(QtCore.QRect(170, 210, 460, 28))
         font = QtGui.QFont()
+        font.setFamily("Arial")
         font.setPointSize(12)
-        self.cb_departamento.setFont(font)
-        self.cb_departamento.setStyleSheet(" color: inherit;\n"
-"    background-color: var(--option-bg);")
-        self.cb_departamento.setObjectName("cb_departamento")
-        self.dte_fechoy = QtWidgets.QDateEdit(self.centralwidget)
+        self.cbb_departamento.setFont(font)
+        self.cbb_departamento.setStyleSheet(" color: rgb(255, 255, 255);\n"
+"    background-color: rgb(6, 91, 103);")
+        self.cbb_departamento.setObjectName("cbb_departamento")
+        self.dte_fechoy = QtWidgets.QDateEdit(self.vfm_registroActs_body)
         self.dte_fechoy.setEnabled(False)
-        self.dte_fechoy.setGeometry(QtCore.QRect(640, 3, 100, 28))
+        self.dte_fechoy.setGeometry(QtCore.QRect(640, 6, 100, 24))
         font = QtGui.QFont()
+        font.setFamily("Arial")
         font.setPointSize(12)
         self.dte_fechoy.setFont(font)
+        self.dte_fechoy.setFocusPolicy(QtCore.Qt.TabFocus)
         self.dte_fechoy.setStyleSheet(" color: rgb(6, 91, 103);\n"
 "   background: linear-gradient(360deg,#03e9f4);")
         self.dte_fechoy.setFrame(False)
@@ -146,23 +219,34 @@ class Ui_Viewformulario(object):
         self.dte_fechoy.setCalendarPopup(False)
         self.dte_fechoy.setDate(QtCore.QDate(2023, 10, 6))
         self.dte_fechoy.setObjectName("dte_fechoy")
-        self.cb_productos = QtWidgets.QComboBox(self.centralwidget)
-        self.cb_productos.setGeometry(QtCore.QRect(170, 160, 570, 32))
+        self.cbb_productos = QtWidgets.QComboBox(self.vfm_registroActs_body)
+        self.cbb_productos.setGeometry(QtCore.QRect(170, 140, 570, 28))
         font = QtGui.QFont()
+        font.setFamily("Arial")
         font.setPointSize(12)
-        self.cb_productos.setFont(font)
-        self.cb_productos.setStyleSheet(" color: inherit;\n"
-"    background-color: var(--option-bg);")
-        self.cb_productos.setObjectName("cb_productos")
-        self.label_5 = QtWidgets.QLabel(self.centralwidget)
-        self.label_5.setGeometry(QtCore.QRect(170, 130, 110, 28))
-        self.label_5.setStyleSheet("  font-size: 16px;\n"
-"color: rgb(84, 84, 84);")
-        self.label_5.setObjectName("label_5")
-        self.tabla_actividad = QtWidgets.QTableView(self.centralwidget)
-        self.tabla_actividad.setEnabled(True)
-        self.tabla_actividad.setGeometry(QtCore.QRect(170, 410, 571, 171))
-        self.tabla_actividad.setStyleSheet("font-family: \"Lucida Sans Unicode\", \"Lucida Grande\", Sans-Serif;\n"
+        self.cbb_productos.setFont(font)
+        self.cbb_productos.setStyleSheet(" color: rgb(255, 255, 255);\n"
+"    background-color: rgb(6, 91, 103);")
+        self.cbb_productos.setObjectName("cbb_productos")
+        self.lbl_productos = QtWidgets.QLabel(self.vfm_registroActs_body)
+        self.lbl_productos.setGeometry(QtCore.QRect(170, 114, 78, 24))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(75)
+        self.lbl_productos.setFont(font)
+        self.lbl_productos.setStyleSheet("  font-size: 12px;\n"
+"color: rgb(6, 91, 103);")
+        self.lbl_productos.setObjectName("lbl_productos")
+        self.tbl_actividad = QtWidgets.QTableView(self.vfm_registroActs_body)
+        self.tbl_actividad.setEnabled(True)
+        self.tbl_actividad.setGeometry(QtCore.QRect(170, 370, 570, 252))
+        font = QtGui.QFont()
+        font.setFamily("Lucida Sans Unicode")
+        font.setPointSize(-1)
+        self.tbl_actividad.setFont(font)
+        self.tbl_actividad.setStyleSheet("font-family: \"Lucida Sans Unicode\", \"Lucida Grande\", Sans-Serif;\n"
 "    font-size: 12px;       width: 480px; text-align: left;    border-\n"
 "\n"
 "th {     font-size: 13px;     font-weight: normal;     padding: 8px;     background: #b9c9fe;\n"
@@ -172,38 +256,39 @@ class Ui_Viewformulario(object):
 "    color: #669;    border-top: 1px solid transparent; }\n"
 "\n"
 "tr:hover td { background: #d0dafd; color: #339; }")
-        self.tabla_actividad.setObjectName("tabla_actividad")
-        Viewformulario.setCentralWidget(self.centralwidget)
-        self.statusbar = QtWidgets.QStatusBar(Viewformulario)
-        self.statusbar.setObjectName("statusbar")
-        Viewformulario.setStatusBar(self.statusbar)
+        self.tbl_actividad.setObjectName("tbl_actividad")
+        vfm_registroActs.setCentralWidget(self.vfm_registroActs_body)
+        self.vfm_registroActs_statusb = QtWidgets.QStatusBar(vfm_registroActs)
+        self.vfm_registroActs_statusb.setObjectName("vfm_registroActs_statusb")
+        vfm_registroActs.setStatusBar(self.vfm_registroActs_statusb)
 
-        self.retranslateUi(Viewformulario)
-        QtCore.QMetaObject.connectSlotsByName(Viewformulario)
+        self.retranslateUi(vfm_registroActs)
+        QtCore.QMetaObject.connectSlotsByName(vfm_registroActs)
 
-    def retranslateUi(self, Viewformulario):
+    def retranslateUi(self, vfm_registroActs):
         _translate = QtCore.QCoreApplication.translate
-        Viewformulario.setWindowTitle(_translate("Viewformulario", "Actividades"))
-        self.txt_horasMinutos.setPlaceholderText(_translate("Viewformulario", "HORAS O MINUTOS"))
-        self.txt_op.setPlaceholderText(_translate("Viewformulario", "OP"))
-        self.txt_nombre.setText(_translate("Viewformulario", "NOMBRE  COMPLETO"))
-        self.txt_cliente.setPlaceholderText(_translate("Viewformulario", "CLIENTE"))
-        self.label_3.setText(_translate("Viewformulario", "DEPARTAMENTO"))
-        self.label_4.setText(_translate("Viewformulario", "CONCEPTO"))
-        self.btn_concepto.setText(_translate("Viewformulario", "+ CONCEPTO"))
-        self.rb_horas.setText(_translate("Viewformulario", "HORAS"))
-        self.rb_minutos.setText(_translate("Viewformulario", "MINUTOS"))
-        self.btn_guardar.setText(_translate("Viewformulario", "GUARDAR ACTIVIDADES"))
-        self.btn_agregarActividad.setText(_translate("Viewformulario", "AGREGAR ACTIVIDAD"))
-        self.btn_quitar.setText(_translate("Viewformulario", "QUITAR"))
-        self.label_5.setText(_translate("Viewformulario", "PRODUCTOS"))
+        vfm_registroActs.setWindowTitle(_translate("vfm_registroActs", ". . : : Actividades : : . ."))
+        self.txt_tiempo.setPlaceholderText(_translate("vfm_registroActs", "TIEMPO"))
+        self.txt_op.setPlaceholderText(_translate("vfm_registroActs", "OP"))
+        self.lbl_nombre.setText(_translate("vfm_registroActs", "NOMBRE  COMPLETO"))
+        self.txt_cliente.setPlaceholderText(_translate("vfm_registroActs", "CLIENTE"))
+        self.lbl_departamento.setText(_translate("vfm_registroActs", "DEPARTAMENTO"))
+        self.lbl_actividad.setText(_translate("vfm_registroActs", "ACTIVIDAD"))
+        self.btn_actividad.setText(_translate("vfm_registroActs", "+ ACTIVIDAD"))
+        self.rbt_horas.setText(_translate("vfm_registroActs", "HORAS"))
+        self.rbt_minutos.setText(_translate("vfm_registroActs", "MINUTOS"))
+        self.btn_guardar.setText(_translate("vfm_registroActs", "GUARDAR ACTIVIDADES"))
+        self.btn_agregaAct.setText(_translate("vfm_registroActs", "AGREGAR ACTIVIDAD"))
+        self.btn_quitar.setText(_translate("vfm_registroActs", "QUITAR"))
+        self.lbl_productos.setText(_translate("vfm_registroActs", "PRODUCTOS"))
+import recursos_AA_rc
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    Viewformulario = QtWidgets.QMainWindow()
-    ui = Ui_Viewformulario()
-    ui.setupUi(Viewformulario)
-    Viewformulario.show()
+    vfm_registroActs = QtWidgets.QMainWindow()
+    ui = Ui_vfm_registroActs()
+    ui.setupUi(vfm_registroActs)
+    vfm_registroActs.show()
     sys.exit(app.exec_())
