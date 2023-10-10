@@ -31,22 +31,22 @@ class ControllerFormulario:
         self.model_base_tareas = ModelBaseTarea()
         self.model_base_conceptos = ModelBaseConceptos()
         #INICIAL
-        self.vista.btn_concepto.clicked.connect(self.mostrar_vista_concepto)
+        self.vista.btn_actividad.clicked.connect(self.mostrar_vista_concepto)
         #self.vista.btn_cerrar.clicked.connect(self.cerrar)
-        self.vista.cb_departamento.currentIndexChanged.connect(self.evntChangedCbConcepto)
+        self.vista.cbb_departamento.currentIndexChanged.connect(self.evntChangedCbConcepto)
         self.vista.txt_op.editingFinished.connect(self.evtEditingFinishedOpLLenarInfo)
-        self.vista.btn_agregarActividad.clicked.connect(self.evtAgregarActididad)
+        self.vista.btn_agregaAct.clicked.connect(self.evtAgregarActididad)
         self.vista.btn_guardar.clicked.connect(self.evtGuaradarFormulario)
         self.vista.btn_quitar.clicked.connect(self.evtQuitarElemento)
-        self.vista.txt_horasMinutos.editingFinished.connect(self.evtEditingFinishedTiempo)
-        self.vista.rb_horas.toggled.connect(self.evtRadio_button_toggled)
-        self.vista.rb_minutos.toggled.connect(self.evtRadio_button_toggled)
-        self.controllerComon.llenarCbDepartameto(self.vista.cb_departamento)
-        self.vista.rb_minutos.setChecked(True)
+        self.vista.txt_tiempo.editingFinished.connect(self.evtEditingFinishedTiempo)
+        self.vista.rbt_horas.toggled.connect(self.evtRadio_button_toggled)
+        self.vista.rbt_minutos.toggled.connect(self.evtRadio_button_toggled)
+        self.controllerComon.llenarCbDepartameto(self.vista.cbb_departamento)
+        self.vista.rbt_minutos.setChecked(True)
 
         #validar campos numericos
         int_validator = QIntValidator()
-        self.vista.txt_horasMinutos.setValidator(int_validator)
+        self.vista.txt_tiempo.setValidator(int_validator)
         self.vista.txt_op.setValidator(int_validator)
 
 
@@ -83,8 +83,8 @@ class ControllerFormulario:
             Descripcion:    
                 Para actualizar el combo box (Conceptos) despues de aver seleccionado un (departamento)
         '''
-        id_departamento = self.model_departamento.baseDepartamentos_by_name(self.vista.cb_departamento.currentText())
-        self.controllerComon.llenarCbConceptos(self.vista.cb_concepto, id_departamento[0])
+        id_departamento = self.model_departamento.baseDepartamentos_by_name(self.vista.cbb_departamento.currentText())
+        self.controllerComon.llenarCbConceptos(self.vista.cbb_concepto, id_departamento[0])
 
     def evento_de_cierre_conceptos(self, event):
         '''
@@ -100,8 +100,8 @@ class ControllerFormulario:
         '''
         self.modelUser.infoUsuario()
         self.vista.txt_nombre.setText(BdUsurio.nombre)
-        self.vista.cb_departamento.setCurrentText(BdUsurio.departamento)
-        self.controllerComon.llenarCbConceptos(self.vista.cb_concepto, BdUsurio.id_departamento)
+        self.vista.cbb_departamento.setCurrentText(BdUsurio.departamento)
+        self.controllerComon.llenarCbConceptos(self.vista.cbb_concepto, BdUsurio.id_departamento)
 
         '''Definir hora que se abre la app'''
         self.hora_inicial = datetime.datetime.now().time()
@@ -120,11 +120,11 @@ class ControllerFormulario:
         cliente= self.model_op.ConsultaCliente(op)
         if cliente != None:
             self.vista.txt_cliente.setText(cliente[0])
-            self.llenar_cb_productos(op)
+            self.llenar_cbb_productos(op)
         else:
             self.evtLimpiaraCampos()
 
-    def llenar_cb_productos(self, op):
+    def llenar_cbb_productos(self, op):
         '''
             Descripcion:  
                 Para cargar los pructos al combo box, apartir de una op
@@ -132,34 +132,34 @@ class ControllerFormulario:
             Agrs:
                 op: Numero de folio de la op
         '''
-        self.vista.cb_productos.clear() 
+        self.vista.cbb_productos.clear() 
         conceptos_list =  self.model_op.ConsultaProducctos(op)
 
         for fila in conceptos_list:
             producto = fila[0]
-            self.vista.cb_productos.addItem(producto)
+            self.vista.cbb_productos.addItem(producto)
 
     def evtAgregarActididad(self):
         '''
             Descripcion:
                 Agregar actividad al modelo, se ve reflejado en la tabla
         '''
-        if self.vista.txt_horasMinutos.text() != "" :
+        if self.vista.txt_tiempo.text() != "" :
             HoraMinutos = ""
-            if self.vista.rb_minutos.isChecked():
+            if self.vista.rbt_minutos.isChecked():
                 HoraMinutos = "M"
             else :
                 HoraMinutos = "H"
 
             op = QStandardItem(self.vista.txt_op.text() )
             modo = QStandardItem(HoraMinutos)
-            tiempo = QStandardItem(self.vista.txt_horasMinutos.text())
-            departamento = QStandardItem(self.vista.cb_departamento.currentText())
-            concepto = QStandardItem(self.vista.cb_concepto.currentText())
+            tiempo = QStandardItem(self.vista.txt_tiempo.text())
+            departamento = QStandardItem(self.vista.cbb_departamento.currentText())
+            concepto = QStandardItem(self.vista.cbb_concepto.currentText())
             self.tabla_activiades_modelo.appendRow([op, modo, tiempo, departamento, concepto])
             self.vista.tabla_actividad.setModel(self.tabla_activiades_modelo)
             self.evtLimpiaraCampos()
-            self.vista.txt_horasMinutos.setText("")
+            self.vista.txt_tiempo.setText("")
         else :
             self.mensaje = QtWidgets.QMessageBox()
             self.mensaje.setIcon(QtWidgets.QMessageBox.Information)
@@ -174,7 +174,7 @@ class ControllerFormulario:
         '''
         self.vista.txt_cliente.setText("")
         self.vista.txt_op.setText("")
-        self.vista.cb_productos.clear()
+        self.vista.cbb_productos.clear()
 
     def evtQuitarElemento(self):
         '''
@@ -192,20 +192,20 @@ class ControllerFormulario:
             Descripcion:
                 Validar que no meta mas de 59 min: si es  50 >   = se limpiar campo 
         '''
-        time = self.vista.txt_horasMinutos.text() 
-        if self.vista.rb_minutos.isChecked() == True and int(time) > 59 :
-            self.vista.txt_horasMinutos.setText("")
+        time = self.vista.txt_tiempo.text() 
+        if self.vista.rbt_minutos.isChecked() == True and int(time) > 59 :
+            self.vista.txt_tiempo.setText("")
 
     def evtRadio_button_toggled(self, state):
         ''' 
             Descripcion:
                 Evento disparado al cambiar el  estado del radio button
-                Limpiar el campo txt_horasMinutos despues de cambiar el estado
+                Limpiar el campo txt_tiempo despues de cambiar el estado
             Args:
                 state:estado del radio button
         '''
         if state:
-            self.vista.txt_horasMinutos.setText("")
+            self.vista.txt_tiempo.setText("")
 
     def evtGuaradarFormulario(self):
         '''
