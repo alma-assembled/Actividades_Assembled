@@ -1,6 +1,6 @@
 
 from Models.userModel import Usuario 
-from Views.formularioView import Ui_Viewformulario
+from Views.formularioView import Ui_vfm_registroActs
 from PyQt5 import  QtWidgets
 import  sys
 from Controllers.formularioController import ControllerFormulario
