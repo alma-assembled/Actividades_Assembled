@@ -50,7 +50,7 @@
      </font>
     </property>
     <property name="focusPolicy">
-     <enum>Qt::TabFocus</enum>
+     <enum>Qt::WheelFocus</enum>
     </property>
     <property name="styleSheet">
      <string notr="true">width: 100%;
@@ -89,7 +89,7 @@ color: rgb(6, 91, 103);</string>
      <cursorShape>IBeamCursor</cursorShape>
     </property>
     <property name="focusPolicy">
-     <enum>Qt::TabFocus</enum>
+     <enum>Qt::WheelFocus</enum>
     </property>
     <property name="styleSheet">
      <string notr="true">width: 100%;
@@ -168,15 +168,22 @@ color: rgb(6, 91, 103);</string>
      <font>
       <family>Arial</family>
       <pointsize>-1</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
     </property>
     <property name="focusPolicy">
-     <enum>Qt::TabFocus</enum>
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="toolTipDuration">
+     <number>1</number>
     </property>
     <property name="styleSheet">
-     <string notr="true">  font-size: 12px;
+     <string notr="true">font: 12px &quot;Arial&quot;;
 color: rgb(6, 91, 103);
 </string>
     </property>
@@ -203,7 +210,7 @@ color: rgb(6, 91, 103);
      </font>
     </property>
     <property name="focusPolicy">
-     <enum>Qt::TabFocus</enum>
+     <enum>Qt::NoFocus</enum>
     </property>
     <property name="styleSheet">
      <string notr="true">width: 100%;
@@ -302,6 +309,9 @@ color: rgb(6, 91, 103);</string>
       <height>28</height>
      </rect>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::WheelFocus</enum>
+    </property>
     <property name="styleSheet">
      <string notr="true"> background:rgb(6, 91, 103);
 color: rgb(255, 255, 255);</string>
@@ -325,6 +335,9 @@ color: rgb(255, 255, 255);</string>
       <pointsize>8</pointsize>
      </font>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::WheelFocus</enum>
+    </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(6, 91, 103);
 indicator { background-color: red; }</string>
@@ -347,6 +360,9 @@ indicator { background-color: red; }</string>
       <family>Arial</family>
      </font>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::WheelFocus</enum>
+    </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(6, 91, 103);
 indicator { background-color: red; }</string>
@@ -368,6 +384,9 @@ indicator { background-color: red; }</string>
      <font>
       <family>Arial</family>
      </font>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::WheelFocus</enum>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(255, 255, 255);
@@ -393,6 +412,9 @@ indicator { background-color: red; }</string>
       <pointsize>8</pointsize>
      </font>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::WheelFocus</enum>
+    </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(255, 255, 255);
   background: rgb(6, 91, 103);</string>
@@ -414,6 +436,9 @@ indicator { background-color: red; }</string>
      <font>
       <family>Arial</family>
      </font>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::WheelFocus</enum>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(255,255,255);
@@ -462,7 +487,7 @@ indicator { background-color: red; }</string>
      </font>
     </property>
     <property name="focusPolicy">
-     <enum>Qt::TabFocus</enum>
+     <enum>Qt::NoFocus</enum>
     </property>
     <property name="styleSheet">
      <string notr="true"> color: rgb(6, 91, 103);
@@ -502,6 +527,9 @@ indicator { background-color: red; }</string>
       <family>Arial</family>
       <pointsize>12</pointsize>
      </font>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::NoContextMenu</enum>
     </property>
     <property name="styleSheet">
      <string notr="true"> color: rgb(255, 255, 255);
@@ -551,6 +579,9 @@ color: rgb(6, 91, 103);</string>
       <pointsize>-1</pointsize>
      </font>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::WheelFocus</enum>
+    </property>
     <property name="styleSheet">
      <string notr="true">font-family: &quot;Lucida Sans Unicode&quot;, &quot;Lucida Grande&quot;, Sans-Serif;
     font-size: 12px;       width: 480px; text-align: left;    border-
@@ -567,6 +598,20 @@ tr:hover td { background: #d0dafd; color: #339; }</string>
   </widget>
   <widget class="QStatusBar" name="vfm_registroActs_statusb"/>
  </widget>
+ <tabstops>
+  <tabstop>txt_op</tabstop>
+  <tabstop>cbb_productos</tabstop>
+  <tabstop>cbb_departamento</tabstop>
+  <tabstop>cbb_actividad</tabstop>
+  <tabstop>btn_actividad</tabstop>
+  <tabstop>txt_tiempo</tabstop>
+  <tabstop>rbt_horas</tabstop>
+  <tabstop>rbt_minutos</tabstop>
+  <tabstop>btn_agregaAct</tabstop>
+  <tabstop>tbl_actividad</tabstop>
+  <tabstop>btn_guardar</tabstop>
+  <tabstop>btn_quitar</tabstop>
+ </tabstops>
  <resources>
   <include location="recursos_AA.qrc"/>
  </resources>

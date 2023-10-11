@@ -57,8 +57,8 @@ class ControllerFormulario:
         '''
         self.tabla_activiades_modelo = QStandardItemModel()
         self.tabla_activiades_modelo.setHorizontalHeaderLabels(["op", "Modo","Tiempo","Departamento","Concepto"])
-        self.vista.tabla_actividad.setModel(self.tabla_activiades_modelo)
-        self.vista.tabla_actividad.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectRows) 
+        self.vista.tbl_actividad.setModel(self.tabla_activiades_modelo)
+        self.vista.tbl_actividad.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectRows) 
 
 
     def mostrar_vista_concepto(self):
@@ -84,7 +84,7 @@ class ControllerFormulario:
                 Para actualizar el combo box (Conceptos) despues de aver seleccionado un (departamento)
         '''
         id_departamento = self.model_departamento.baseDepartamentos_by_name(self.vista.cbb_departamento.currentText())
-        self.controllerComon.llenarCbConceptos(self.vista.cbb_concepto, id_departamento[0])
+        self.controllerComon.llenarCbConceptos(self.vista.cbb_actividad, id_departamento[0])
 
     def evento_de_cierre_conceptos(self, event):
         '''
@@ -99,9 +99,9 @@ class ControllerFormulario:
                 Llenar la informacion inicial apartir de el usuario logeado
         '''
         self.modelUser.infoUsuario()
-        self.vista.txt_nombre.setText(BdUsurio.nombre)
+        self.vista.lbl_nombre.setText(BdUsurio.nombre)
         self.vista.cbb_departamento.setCurrentText(BdUsurio.departamento)
-        self.controllerComon.llenarCbConceptos(self.vista.cbb_concepto, BdUsurio.id_departamento)
+        self.controllerComon.llenarCbConceptos(self.vista.cbb_actividad, BdUsurio.id_departamento)
 
         '''Definir hora que se abre la app'''
         self.hora_inicial = datetime.datetime.now().time()
@@ -155,9 +155,9 @@ class ControllerFormulario:
             modo = QStandardItem(HoraMinutos)
             tiempo = QStandardItem(self.vista.txt_tiempo.text())
             departamento = QStandardItem(self.vista.cbb_departamento.currentText())
-            concepto = QStandardItem(self.vista.cbb_concepto.currentText())
+            concepto = QStandardItem(self.vista.cbb_actividad.currentText())
             self.tabla_activiades_modelo.appendRow([op, modo, tiempo, departamento, concepto])
-            self.vista.tabla_actividad.setModel(self.tabla_activiades_modelo)
+            self.vista.tbl_actividad.setModel(self.tabla_activiades_modelo)
             self.evtLimpiaraCampos()
             self.vista.txt_tiempo.setText("")
         else :
@@ -181,11 +181,11 @@ class ControllerFormulario:
         Descripcion: 
             Eliminar un elemento seleccionado de la tabla
         '''
-        modelo = self.vista.tabla_actividad.model()
-        indices_seleccionados = self.vista.tabla_actividad.selectionModel().selectedRows()
+        modelo = self.vista.tbl_actividad.model()
+        indices_seleccionados = self.vista.tbl_actividad.selectionModel().selectedRows()
         for indice in sorted(indices_seleccionados, reverse=True):
             modelo.removeRow(indice.row())
-        self.vista.tabla_actividad.update()
+        self.vista.tbl_actividad.update()
 
     def evtEditingFinishedTiempo(self):
         '''
@@ -214,7 +214,7 @@ class ControllerFormulario:
                 -Base_Tareas
                 -lista de (Base_Conceptos)
         '''
-        modelo = self.vista.tabla_actividad.model()
+        modelo = self.vista.tbl_actividad.model()
         num_filas = modelo.rowCount()
         num_columnas = modelo.columnCount()
 

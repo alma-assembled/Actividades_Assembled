@@ -33,7 +33,7 @@ class ControllerUser:
         '''mostrar la ventana de crear '''
         self.ventana_principal.close()
         self.Fo = QtWidgets.QMainWindow()
-        self.ui = Ui_Viewformulario()
+        self.ui = Ui_vfm_registroActs()
         self.ui.setupUi(self.Fo)
         self.controlador = ControllerFormulario(self.ui, self.Fo)
         self.Fo.show()
