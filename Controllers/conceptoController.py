@@ -24,7 +24,7 @@ class ControllerConcepto:
         '''metodo para guardar nuevos conceptos'''
         self.model_departamento = ModelDepartamento()
         id_departamento = self.model_departamento.baseDepartamentos_by_name(self.vista.cbb_departamento_frmC.currentText())
-        self.model.CatalogoConceptosInsert( id_departamento[0], self.vista.txt_actividad_frmC.toPlainText().upper()) 
+        self.model.CatalogoConceptosInsert( id_departamento[0], self.vista.lineEdit.text().upper()) 
         self.mensaje = QtWidgets.QMessageBox()
         self.mensaje.setIcon(QtWidgets.QMessageBox.Information)
         self.mensaje.setText( "Concepto guardado")

@@ -34,7 +34,7 @@ class Ui_DilogConceptos(object):
         self.lbl_departamento_frmC.setGeometry(QtCore.QRect(10, 48, 100, 24))
         font = QtGui.QFont()
         font.setFamily("Arial")
-        font.setPointSize(-1)
+        font.setPointSize(12)
         font.setBold(True)
         font.setWeight(75)
         self.lbl_departamento_frmC.setFont(font)
@@ -54,7 +54,7 @@ class Ui_DilogConceptos(object):
         self.lbl_titulofrm.setGeometry(QtCore.QRect(0, 0, 480, 41))
         font = QtGui.QFont()
         font.setFamily("Arial")
-        font.setPointSize(-1)
+        font.setPointSize(12)
         font.setBold(True)
         font.setWeight(75)
         self.lbl_titulofrm.setFont(font)
@@ -67,7 +67,7 @@ class Ui_DilogConceptos(object):
         self.lbl_actividad_frmC.setGeometry(QtCore.QRect(10, 114, 72, 24))
         font = QtGui.QFont()
         font.setFamily("Arial")
-        font.setPointSize(-1)
+        font.setPointSize(12)
         font.setBold(True)
         font.setWeight(75)
         self.lbl_actividad_frmC.setFont(font)
@@ -78,7 +78,7 @@ class Ui_DilogConceptos(object):
         self.lineEdit.setGeometry(QtCore.QRect(10, 140, 460, 32))
         font = QtGui.QFont()
         font.setFamily("Arial")
-        font.setPointSize(-1)
+        font.setPointSize(12)
         self.lineEdit.setFont(font)
         self.lineEdit.setStyleSheet("width: 100%;\n"
 "  padding: 10px 0;\n"
@@ -92,8 +92,8 @@ class Ui_DilogConceptos(object):
         self.lineEdit.setObjectName("lineEdit")
 
         self.retranslateUi(DilogConceptos)
-        self.btn_box.accepted.connect(DilogConceptos.accept) # type: ignore
-        self.btn_box.rejected.connect(DilogConceptos.reject) # type: ignore
+        #self.btn_box.accepted.connect(DilogConceptos.accept) # type: ignore
+        #self.btn_box.rejected.connect(DilogConceptos.reject) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(DilogConceptos)
 
     def retranslateUi(self, DilogConceptos):
