@@ -281,7 +281,7 @@ class Ui_vfm_registroActs(object):
         self.btn_agregaAct.setText(_translate("vfm_registroActs", "AGREGAR ACTIVIDAD"))
         self.btn_quitar.setText(_translate("vfm_registroActs", "QUITAR"))
         self.lbl_productos.setText(_translate("vfm_registroActs", "PRODUCTOS"))
-import recursos_AA_rc
+import Views.recursos_AA
 
 
 if __name__ == "__main__":
