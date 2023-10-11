@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'Views\formulario.ui'
+# Form implementation generated from reading ui file 'formulario.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -31,8 +31,7 @@ class Ui_vfm_registroActs(object):
         self.txt_tiempo = QtWidgets.QLineEdit(self.vfm_registroActs_body)
         self.txt_tiempo.setGeometry(QtCore.QRect(170, 328, 50, 32))
         font = QtGui.QFont()
-        font.setFamily("Arial")
-        font.setPointSize(19)
+        font.setPointSize(12)
         self.txt_tiempo.setFont(font)
         self.txt_tiempo.setFocusPolicy(QtCore.Qt.WheelFocus)
         self.txt_tiempo.setStyleSheet("width: 100%;\n"
@@ -49,8 +48,7 @@ class Ui_vfm_registroActs(object):
         self.txt_op = QtWidgets.QLineEdit(self.vfm_registroActs_body)
         self.txt_op.setGeometry(QtCore.QRect(170, 74, 130, 32))
         font = QtGui.QFont()
-        font.setFamily("Arial")
-        font.setPointSize(19)
+        font.setPointSize(12)
         self.txt_op.setFont(font)
         self.txt_op.setCursor(QtGui.QCursor(QtCore.Qt.IBeamCursor))
         self.txt_op.setFocusPolicy(QtCore.Qt.WheelFocus)
@@ -75,12 +73,10 @@ class Ui_vfm_registroActs(object):
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.frm_left)
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.lbl_logoAayn = QtWidgets.QLabel(self.frm_left)
-        self.lbl_logoAayn.setEnabled(True)
+        self.lbl_logoAayn.setStyleSheet("image: url(:/logoAayn/Logo_Verical_Blanco.png);\n"
+"margin-top: -514px;")
         self.lbl_logoAayn.setText("")
-        self.lbl_logoAayn.setTextFormat(QtCore.Qt.PlainText)
-        self.lbl_logoAayn.setPixmap(QtGui.QPixmap("Views\\Logo_Verical_Blanco.png"))
-        self.lbl_logoAayn.setScaledContents(False)
-        self.lbl_logoAayn.setAlignment(QtCore.Qt.AlignHCenter|QtCore.Qt.AlignTop)
+        self.lbl_logoAayn.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
         self.lbl_logoAayn.setObjectName("lbl_logoAayn")
         self.horizontalLayout.addWidget(self.lbl_logoAayn)
         self.lbl_nombre = QtWidgets.QLabel(self.vfm_registroActs_body)
@@ -103,7 +99,6 @@ class Ui_vfm_registroActs(object):
         self.txt_cliente.setEnabled(False)
         self.txt_cliente.setGeometry(QtCore.QRect(300, 74, 440, 32))
         font = QtGui.QFont()
-        font.setFamily("Arial")
         font.setPointSize(12)
         self.txt_cliente.setFont(font)
         self.txt_cliente.setFocusPolicy(QtCore.Qt.NoFocus)
@@ -121,10 +116,7 @@ class Ui_vfm_registroActs(object):
         self.lbl_departamento = QtWidgets.QLabel(self.vfm_registroActs_body)
         self.lbl_departamento.setGeometry(QtCore.QRect(170, 180, 100, 24))
         font = QtGui.QFont()
-        font.setFamily("Arial")
         font.setPointSize(12)
-        font.setBold(True)
-        font.setWeight(75)
         self.lbl_departamento.setFont(font)
         self.lbl_departamento.setStyleSheet("  font-size: 12px;\n"
 "color: rgb(6, 91, 103);;")
@@ -132,10 +124,7 @@ class Ui_vfm_registroActs(object):
         self.lbl_actividad = QtWidgets.QLabel(self.vfm_registroActs_body)
         self.lbl_actividad.setGeometry(QtCore.QRect(170, 242, 72, 24))
         font = QtGui.QFont()
-        font.setFamily("Arial")
         font.setPointSize(12)
-        font.setBold(True)
-        font.setWeight(75)
         self.lbl_actividad.setFont(font)
         self.lbl_actividad.setStyleSheet("  font-size: 12px;\n"
 "color: rgb(6, 91, 103);")
@@ -241,10 +230,7 @@ class Ui_vfm_registroActs(object):
         self.lbl_productos = QtWidgets.QLabel(self.vfm_registroActs_body)
         self.lbl_productos.setGeometry(QtCore.QRect(170, 114, 78, 24))
         font = QtGui.QFont()
-        font.setFamily("Arial")
         font.setPointSize(12)
-        font.setBold(True)
-        font.setWeight(75)
         self.lbl_productos.setFont(font)
         self.lbl_productos.setStyleSheet("  font-size: 12px;\n"
 "color: rgb(6, 91, 103);")
@@ -253,7 +239,7 @@ class Ui_vfm_registroActs(object):
         self.tbl_actividad.setEnabled(True)
         self.tbl_actividad.setGeometry(QtCore.QRect(170, 370, 570, 252))
         font = QtGui.QFont()
-        font.setFamily("Lucida Sans Unicode")
+        font.setFamily("Lucida Sans Unicode,Lucida Grande,Sans-Serif")
         font.setPointSize(12)
         self.tbl_actividad.setFont(font)
         self.tbl_actividad.setFocusPolicy(QtCore.Qt.WheelFocus)
@@ -304,7 +290,6 @@ class Ui_vfm_registroActs(object):
         self.btn_quitar.setText(_translate("vfm_registroActs", "QUITAR"))
         self.lbl_productos.setText(_translate("vfm_registroActs", "PRODUCTOS"))
 import Views.recursos_AA
-
 
 if __name__ == "__main__":
     import sys
