@@ -35,7 +35,7 @@ class Ui_vfm_registroActs(object):
         self.txt_tiempo.setFont(font)
         self.txt_tiempo.setFocusPolicy(QtCore.Qt.WheelFocus)
         self.txt_tiempo.setStyleSheet("width: 100%;\n"
-"  padding: 10px 0;\n"
+"  padding: 8px;\n"
 "  font-size: 12px;\n"
 "  color: rgb(6, 91, 103);\n"
 "  border: none;\n"
@@ -53,7 +53,7 @@ class Ui_vfm_registroActs(object):
         self.txt_op.setCursor(QtGui.QCursor(QtCore.Qt.IBeamCursor))
         self.txt_op.setFocusPolicy(QtCore.Qt.WheelFocus)
         self.txt_op.setStyleSheet("width: 100%;\n"
-"  padding: 10px 0;\n"
+"  padding: 6px;\n"
 "  font-size: 12px;\n"
 "  color: rgb(6, 91, 103);\n"
 "  border: none;\n"
@@ -103,7 +103,7 @@ class Ui_vfm_registroActs(object):
         self.txt_cliente.setFont(font)
         self.txt_cliente.setFocusPolicy(QtCore.Qt.NoFocus)
         self.txt_cliente.setStyleSheet("width: 100%;\n"
-"  padding: 10px 0;\n"
+"  padding: 8px;\n"
 "  font-size: 12px;\n"
 "  color: rgb(6, 91, 103);\n"
 "  border: none;\n"
@@ -145,7 +145,7 @@ class Ui_vfm_registroActs(object):
 "color: rgb(255, 255, 255);")
         self.btn_actividad.setObjectName("btn_actividad")
         self.rbt_horas = QtWidgets.QRadioButton(self.vfm_registroActs_body)
-        self.rbt_horas.setGeometry(QtCore.QRect(240, 310, 60, 24))
+        self.rbt_horas.setGeometry(QtCore.QRect(240, 340, 60, 24))
         font = QtGui.QFont()
         font.setFamily("Arial")
         font.setPointSize(8)
@@ -155,7 +155,7 @@ class Ui_vfm_registroActs(object):
 "indicator { background-color: red; }")
         self.rbt_horas.setObjectName("rbt_horas")
         self.rbt_minutos = QtWidgets.QRadioButton(self.vfm_registroActs_body)
-        self.rbt_minutos.setGeometry(QtCore.QRect(240, 340, 70, 24))
+        self.rbt_minutos.setGeometry(QtCore.QRect(240, 310, 70, 24))
         font = QtGui.QFont()
         font.setFamily("Arial")
         self.rbt_minutos.setFont(font)
@@ -266,9 +266,9 @@ class Ui_vfm_registroActs(object):
         vfm_registroActs.setTabOrder(self.cbb_departamento, self.cbb_actividad)
         vfm_registroActs.setTabOrder(self.cbb_actividad, self.btn_actividad)
         vfm_registroActs.setTabOrder(self.btn_actividad, self.txt_tiempo)
-        vfm_registroActs.setTabOrder(self.txt_tiempo, self.rbt_horas)
-        vfm_registroActs.setTabOrder(self.rbt_horas, self.rbt_minutos)
-        vfm_registroActs.setTabOrder(self.rbt_minutos, self.btn_agregaAct)
+        vfm_registroActs.setTabOrder(self.txt_tiempo, self.rbt_minutos)
+        vfm_registroActs.setTabOrder(self.rbt_minutos, self.rbt_horas)
+        vfm_registroActs.setTabOrder(self.rbt_horas, self.btn_agregaAct)
         vfm_registroActs.setTabOrder(self.btn_agregaAct, self.tbl_actividad)
         vfm_registroActs.setTabOrder(self.tbl_actividad, self.btn_guardar)
         vfm_registroActs.setTabOrder(self.btn_guardar, self.btn_quitar)
