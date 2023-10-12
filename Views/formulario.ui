@@ -53,7 +53,7 @@
     </property>
     <property name="styleSheet">
      <string notr="true">width: 100%;
-  padding: 10px 0;
+  padding: 8px;
   font-size: 12px;
   color: rgb(6, 91, 103);
   border: none;
@@ -80,6 +80,7 @@ color: rgb(6, 91, 103);</string>
     </property>
     <property name="font">
      <font>
+      <family>Arial</family>
       <pointsize>-1</pointsize>
      </font>
     </property>
@@ -91,7 +92,7 @@ color: rgb(6, 91, 103);</string>
     </property>
     <property name="styleSheet">
      <string notr="true">width: 100%;
-  padding: 10px 0;
+  padding: 6px;
   font-size: 12px;
   color: rgb(6, 91, 103);
   border: none;
@@ -107,7 +108,7 @@ color: rgb(6, 91, 103);</string>
      <bool>true</bool>
     </property>
     <property name="alignment">
-     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
     </property>
     <property name="placeholderText">
      <string>OP</string>
@@ -203,7 +204,7 @@ color: rgb(6, 91, 103);
     </property>
     <property name="styleSheet">
      <string notr="true">width: 100%;
-  padding: 10px 0;
+  padding: 6px;
   font-size: 12px;
   color: rgb(6, 91, 103);
   border: none;
@@ -307,7 +308,7 @@ color: rgb(255, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>240</x>
-      <y>310</y>
+      <y>340</y>
       <width>60</width>
       <height>24</height>
      </rect>
@@ -333,7 +334,7 @@ indicator { background-color: red; }</string>
     <property name="geometry">
      <rect>
       <x>240</x>
-      <y>340</y>
+      <y>310</y>
       <width>70</width>
       <height>24</height>
      </rect>
@@ -555,7 +556,7 @@ color: rgb(6, 91, 103);</string>
     </property>
     <property name="font">
      <font>
-      <family>Lucida Sans Unicode,Lucida Grande,Sans-Serif</family>
+      <family>Lucida Sans Unicode</family>
       <pointsize>-1</pointsize>
      </font>
     </property>
@@ -585,8 +586,8 @@ tr:hover td { background: #d0dafd; color: #339; }</string>
   <tabstop>cbb_actividad</tabstop>
   <tabstop>btn_actividad</tabstop>
   <tabstop>txt_tiempo</tabstop>
-  <tabstop>rbt_horas</tabstop>
   <tabstop>rbt_minutos</tabstop>
+  <tabstop>rbt_horas</tabstop>
   <tabstop>btn_agregaAct</tabstop>
   <tabstop>tbl_actividad</tabstop>
   <tabstop>btn_guardar</tabstop>
