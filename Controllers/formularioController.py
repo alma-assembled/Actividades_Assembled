@@ -244,10 +244,11 @@ class ControllerFormulario:
                 _op = 0
                 base_concepto =BaseConceptos(_op, concepto_id,  id_base_tarea, dato_tiempo, dato_tipo)
                 self.model_base_conceptos.BaseConceptosInsert(base_concepto )
-
+        self.tabla_activiades_modelo.clear()
+        self.tabla_activiades_modelo.setHorizontalHeaderLabels(["op", "Modo","Tiempo","Departamento","Concepto"])
+        self.vista.tbl_actividad.setModel(self.tabla_activiades_modelo)
         self.mensaje = QtWidgets.QMessageBox()
         self.mensaje.setIcon(QtWidgets.QMessageBox.Information)
         self.mensaje.setText( "Actididades Guardadas")
         self.mensaje.setWindowTitle("Informacion")
         self.mensaje.exec_()
-        self.cerrar()
