@@ -606,7 +606,7 @@ tr:hover td { background: #d0dafd; color: #339; }</string>
       <string>VARIAS OPS</string>
      </property>
     </widget>
-    <widget class="QRadioButton" name="rbt_variasOPs_2">
+    <widget class="QRadioButton" name="rbt_proyectos">
      <property name="geometry">
       <rect>
        <x>194</x>
@@ -826,7 +826,7 @@ color: rgb(6, 91, 103);;</string>
  <tabstops>
   <tabstop>rbt_unaOP</tabstop>
   <tabstop>rbt_variasOPs</tabstop>
-  <tabstop>rbt_variasOPs_2</tabstop>
+  <tabstop>rbt_proyectos</tabstop>
   <tabstop>txt_op</tabstop>
   <tabstop>btn_agregarOP</tabstop>
   <tabstop>btn_quitarOP</tabstop>
