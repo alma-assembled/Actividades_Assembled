@@ -188,8 +188,8 @@ color: rgb(6, 91, 103);
     </property>
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>108</y>
+      <x>280</x>
+      <y>72</y>
       <width>320</width>
       <height>32</height>
      </rect>
@@ -520,14 +520,25 @@ indicator { background-color: red; }</string>
     </property>
     <property name="styleSheet">
      <string notr="true">font-family: &quot;Lucida Sans Unicode&quot;, &quot;Lucida Grande&quot;, Sans-Serif;
-    font-size: 12px;       width: 480px; text-align: left;    border-
-
-th {     font-size: 13px;     font-weight: normal;     padding: 8px;     background: #b9c9fe;
-    border-top: 4px solid #aabcfe;    border-bottom: 1px solid #fff; color: #039; }
-
-td {    padding: 8px;     background: #e8edff;     border-bottom: 1px solid #fff;
-    color: #669;    border-top: 1px solid transparent; }
-
+font-size: 12px;
+width: 480px;
+text-align: left;
+border-th {
+	font-size: 13px;
+	font-weight: normal;
+	padding: 8px;
+	background: #b9c9fe;
+	border-top: 4px solid #aabcfe;
+	border-bottom: 1px solid #fff;
+	color: #039;
+}
+td {
+	padding: 8px;
+    background: #e8edff;
+	border-bottom: 1px solid #fff;
+    color: #669;
+	border-top: 1px solid transparent;
+}
 tr:hover td { background: #d0dafd; color: #339; }</string>
     </property>
    </widget>
@@ -566,6 +577,9 @@ tr:hover td { background: #d0dafd; color: #339; }</string>
        <pointsize>8</pointsize>
       </font>
      </property>
+     <property name="focusPolicy">
+      <enum>Qt::WheelFocus</enum>
+     </property>
      <property name="text">
       <string>UNA OP</string>
      </property>
@@ -584,6 +598,9 @@ tr:hover td { background: #d0dafd; color: #339; }</string>
        <family>Arial</family>
        <pointsize>8</pointsize>
       </font>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::WheelFocus</enum>
      </property>
      <property name="text">
       <string>VARIAS OPS</string>
@@ -604,48 +621,13 @@ tr:hover td { background: #d0dafd; color: #339; }</string>
        <pointsize>8</pointsize>
       </font>
      </property>
+     <property name="focusPolicy">
+      <enum>Qt::WheelFocus</enum>
+     </property>
      <property name="text">
       <string>POR PROYECTO</string>
      </property>
     </widget>
-   </widget>
-   <widget class="QLineEdit" name="txt_proyecto">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>170</x>
-      <y>144</y>
-      <width>320</width>
-      <height>32</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>-1</pointsize>
-     </font>
-    </property>
-    <property name="focusPolicy">
-     <enum>Qt::NoFocus</enum>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">width: 100%;
-  padding: 6px;
-  font-size: 12px;
-  color: rgb(6, 91, 103);
-  border: none;
-  outline: none;
-  background: transparent;
-border-bottom: 2px solid rgb(118, 118, 118) ;
-color: rgb(6, 91, 103);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="placeholderText">
-     <string>PROYECTO</string>
-    </property>
    </widget>
    <widget class="QListView" name="lsv_ops">
     <property name="geometry">
@@ -662,6 +644,9 @@ color: rgb(6, 91, 103);</string>
       <pointsize>12</pointsize>
      </font>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::WheelFocus</enum>
+    </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(6, 91,103);color: rgb(255, 255, 255);</string>
     </property>
@@ -672,10 +657,10 @@ color: rgb(6, 91, 103);</string>
    <widget class="QPushButton" name="btn_agregarOP">
     <property name="geometry">
      <rect>
-      <x>590</x>
+      <x>606</x>
       <y>50</y>
-      <width>36</width>
-      <height>36</height>
+      <width>28</width>
+      <height>28</height>
      </rect>
     </property>
     <property name="font">
@@ -683,9 +668,12 @@ color: rgb(6, 91, 103);</string>
       <family>Arial</family>
      </font>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::WheelFocus</enum>
+    </property>
     <property name="styleSheet">
      <string notr="true">image: url(:/logoAayn/agregar.png);
-background-color: rgb(6, 91, 103);</string>
+background-color: transparent;</string>
     </property>
     <property name="text">
      <string/>
@@ -697,13 +685,13 @@ background-color: rgb(6, 91, 103);</string>
      </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="btn_quitar_2">
+   <widget class="QPushButton" name="btn_quitarOP">
     <property name="geometry">
      <rect>
-      <x>590</x>
-      <y>100</y>
-      <width>36</width>
-      <height>36</height>
+      <x>606</x>
+      <y>86</y>
+      <width>28</width>
+      <height>28</height>
      </rect>
     </property>
     <property name="font">
@@ -711,9 +699,12 @@ background-color: rgb(6, 91, 103);</string>
       <family>Arial</family>
      </font>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::WheelFocus</enum>
+    </property>
     <property name="styleSheet">
      <string notr="true">image: url(:/logoAayn/quitar.png);
-background-color: rgb(6, 91, 103);</string>
+background-color: transparent;</string>
     </property>
     <property name="text">
      <string/>
@@ -723,13 +714,126 @@ background-color: rgb(6, 91, 103);</string>
       <width>32</width>
       <height>32</height>
      </size>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="cbb_documentos">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>140</y>
+      <width>130</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"> color: rgb(255, 255, 255);
+    background-color: rgb(6, 91, 103);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_documentos">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>110</y>
+      <width>78</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">  font-size: 12px;
+color: rgb(6, 91, 103);;</string>
+    </property>
+    <property name="text">
+     <string>DOCUMENTO</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_nuevoProyecto">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>140</y>
+      <width>100</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::WheelFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"> background:rgb(6, 91, 103);
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>NUEVO PROYECTO</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_listaProyectos">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>110</y>
+      <width>132</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">  font-size: 12px;
+color: rgb(6, 91, 103);;</string>
+    </property>
+    <property name="text">
+     <string>LISTA DE PROYECTOS</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="cbb_listaProyectos">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>140</y>
+      <width>310</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"> color: rgb(255, 255, 255);
+    background-color: rgb(6, 91, 103);</string>
     </property>
    </widget>
   </widget>
   <widget class="QStatusBar" name="vfm_registroActs_statusb"/>
  </widget>
  <tabstops>
+  <tabstop>rbt_unaOP</tabstop>
+  <tabstop>rbt_variasOPs</tabstop>
+  <tabstop>rbt_variasOPs_2</tabstop>
   <tabstop>txt_op</tabstop>
+  <tabstop>btn_agregarOP</tabstop>
+  <tabstop>btn_quitarOP</tabstop>
+  <tabstop>lsv_ops</tabstop>
+  <tabstop>cbb_listaProyectos</tabstop>
+  <tabstop>cbb_documentos</tabstop>
+  <tabstop>btn_nuevoProyecto</tabstop>
   <tabstop>cbb_departamento</tabstop>
   <tabstop>cbb_actividad</tabstop>
   <tabstop>btn_actividad</tabstop>

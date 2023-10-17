@@ -56,7 +56,7 @@ class ControllerFormulario:
                 crear un modelo, asignar la cabecera de las tablas
         '''
         self.tabla_activiades_modelo = QStandardItemModel()
-        self.tabla_activiades_modelo.setHorizontalHeaderLabels(["op", "Modo","Tiempo","Departamento","Concepto"])
+        self.tabla_activiades_modelo.setHorizontalHeaderLabels(["OP", "MODO","TIEMPO","DEPARTAMENTO","CONCEPTO"])
         self.vista.tbl_actividad.setModel(self.tabla_activiades_modelo)
         self.vista.tbl_actividad.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectRows) 
 
@@ -81,7 +81,7 @@ class ControllerFormulario:
     def evntChangedCbConcepto(self):
         '''
             Descripcion:    
-                Para actualizar el combo box (Conceptos) despues de aver seleccionado un (departamento)
+                Para actualizar el combo box (Conceptos) despues de haber seleccionado un (departamento)
         '''
         id_departamento = self.model_departamento.baseDepartamentos_by_name(self.vista.cbb_departamento.currentText())
         self.controllerComon.llenarCbConceptos(self.vista.cbb_actividad, id_departamento[0])

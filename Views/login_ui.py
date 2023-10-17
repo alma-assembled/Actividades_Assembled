@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'c:\Users\desar\OneDrive\Documentos\GitHub\Actividades_Assembled\Views\login.ui'
+# Form implementation generated from reading ui file 'Views\login.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -72,6 +72,7 @@ class Ui_ViewLogin(object):
         font = QtGui.QFont()
         font.setPointSize(10)
         self.txt_user.setFont(font)
+        self.txt_user.setFocusPolicy(QtCore.Qt.WheelFocus)
         self.txt_user.setStyleSheet("background-color:rgba(0, 0, 0, 0);\n"
 "border:none;\n"
 "border-bottom:2px solid rgba(105, 118, 132, 255);\n"
@@ -83,6 +84,7 @@ class Ui_ViewLogin(object):
         font = QtGui.QFont()
         font.setPointSize(10)
         self.txt_password.setFont(font)
+        self.txt_password.setFocusPolicy(QtCore.Qt.WheelFocus)
         self.txt_password.setStyleSheet("background-color:rgba(0, 0, 0, 0);\n"
 "border:none;\n"
 "border-bottom:2px solid rgba(105, 118, 132, 255);\n"
@@ -97,6 +99,7 @@ class Ui_ViewLogin(object):
         font.setBold(True)
         font.setWeight(75)
         self.btn_logear.setFont(font)
+        self.btn_logear.setFocusPolicy(QtCore.Qt.WheelFocus)
         self.btn_logear.setStyleSheet(" background: linear-gradient(360deg,#03e9f4);")
         self.btn_logear.setObjectName("btn_logear")
         self.label_info = QtWidgets.QLabel(self.widget)
@@ -114,6 +117,7 @@ class Ui_ViewLogin(object):
         self.btn_cerrar.setObjectName("btn_cerrar")
         self.btn_mostrar = QtWidgets.QPushButton(self.widget)
         self.btn_mostrar.setGeometry(QtCore.QRect(250, 230, 31, 31))
+        self.btn_mostrar.setFocusPolicy(QtCore.Qt.WheelFocus)
         self.btn_mostrar.setStyleSheet("image: url(:/img/ojo.png);\n"
 "background-color: transparent;\n"
 "")
@@ -122,6 +126,10 @@ class Ui_ViewLogin(object):
 
         self.retranslateUi(ViewLogin)
         QtCore.QMetaObject.connectSlotsByName(ViewLogin)
+        ViewLogin.setTabOrder(self.txt_user, self.txt_password)
+        ViewLogin.setTabOrder(self.txt_password, self.btn_mostrar)
+        ViewLogin.setTabOrder(self.btn_mostrar, self.btn_logear)
+        ViewLogin.setTabOrder(self.btn_logear, self.btn_cerrar)
 
     def retranslateUi(self, ViewLogin):
         _translate = QtCore.QCoreApplication.translate
@@ -135,3 +143,13 @@ class Ui_ViewLogin(object):
         self.btn_mostrar.setWhatsThis(_translate("ViewLogin", "<html><head/><body><p><br/></p></body></html>"))
 import ojo_rc
 import res_rc
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    ViewLogin = QtWidgets.QWidget()
+    ui = Ui_ViewLogin()
+    ui.setupUi(ViewLogin)
+    ViewLogin.show()
+    sys.exit(app.exec_())
