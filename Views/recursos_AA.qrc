@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="logoAayn">
+    <file>agregar.png</file>
+    <file>quitar.png</file>
     <file>Logo_Verical_Blanco.png</file>
   </qresource>
 </RCC>
