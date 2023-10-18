@@ -1,6 +1,7 @@
 
 from Models.userModel import Usuario 
 from Views.conceptoView import Ui_DilogConceptos
+from Views.nuevo_proyecto import Ui_frm_nuevoProyecto
 from PyQt5 import  QtWidgets
 import  sys
 from Controllers.conceptoController import ControllerConcepto
@@ -32,6 +33,7 @@ class ControllerFormulario:
         self.model_base_conceptos = ModelBaseConceptos()
         #INICIAL
         self.vista.btn_actividad.clicked.connect(self.mostrar_vista_concepto)
+        self.vista.btn_nuevoProyecto.clicked.connect(self.mostrar_vista_nuevo_proyecto)
         #self.vista.btn_cerrar.clicked.connect(self.cerrar)
         self.vista.cbb_departamento.currentIndexChanged.connect(self.evntChangedCbConcepto)
         self.vista.txt_op.editingFinished.connect(self.evtEditingFinishedOpLLenarInfo)
@@ -42,7 +44,11 @@ class ControllerFormulario:
         self.vista.rbt_horas.toggled.connect(self.evtRadio_button_toggled)
         self.vista.rbt_minutos.toggled.connect(self.evtRadio_button_toggled)
         self.controllerComon.llenarCbDepartameto(self.vista.cbb_departamento)
-        self.vista.rbt_minutos.setChecked(True)
+        self.vista.rbt_variasOPs.clicked.connect(self.variasOps)
+        self.vista.rbt_unaOP.clicked.connect(self.unaOp)
+        self.vista.rbt_proyectos.clicked.connect(self.porProyeto)
+        self.vista.btn_agregarOP.clicked.connect(self.evtAgregarOpList)
+        self.vista.btn_quitarOP.clicked.connect(self.evtQuitarOPList)
 
         #validar campos numericos
         int_validator = QIntValidator()
@@ -51,16 +57,21 @@ class ControllerFormulario:
 
 
         self.llenarInfoInicial()
-        '''
-            Descripcion: 
-                crear un modelo, asignar la cabecera de las tablas
-        '''
+        
+        #Descripcion: crear un modelo y asignar la cabecera de las tablas
         self.tabla_activiades_modelo = QStandardItemModel()
         self.tabla_activiades_modelo.setHorizontalHeaderLabels(["OP", "MODO","TIEMPO","DEPARTAMENTO","CONCEPTO"])
         self.vista.tbl_actividad.setModel(self.tabla_activiades_modelo)
         self.vista.tbl_actividad.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectRows) 
 
+        #Crear un modelo para el QlistView
+        self.model_ops = QStandardItemModel()
+        
 
+        self.mensaje = QtWidgets.QMessageBox()
+        self.mensaje.setIcon(QtWidgets.QMessageBox.Information)
+        self.mensaje.setWindowTitle(". . : : Informacion : : . .")
+    
     def mostrar_vista_concepto(self):
         '''
             Descripcion:
@@ -73,6 +84,21 @@ class ControllerFormulario:
         self.view_conceptos.show()
         '''Asignar el evento cerrar, a la ventana conceptos'''
         self.view_conceptos.closeEvent = self.evento_de_cierre_conceptos
+
+    def mostrar_vista_nuevo_proyecto(self):
+        '''
+            Descripcion:
+                Manda ha hablar  la ventana para agregar nuevos proyectos
+        '''
+        self.view_proyecto = QtWidgets.QMainWindow()
+        self.ui = Ui_frm_nuevoProyecto() 
+        self.ui.setupUi(self.view_proyecto)
+        #self.controlador = ControllerConcepto(self.ui, self.view_proyecto) 
+        self.view_proyecto.show()
+        '''Asignar el evento cerrar, a la ventana conceptos'''
+        #self.view_proyecto.closeEvent = self.evento_de_cierre_conceptos
+
+
 
     def cerrar(self):
 
@@ -108,7 +134,10 @@ class ControllerFormulario:
         print("hora inicial:", self.hora_inicial )
         self.fecha_actual = QDate.currentDate()
         self.vista.dte_fechoy.setDate(self.fecha_actual )
-
+        self.vista.rbt_minutos.setChecked(True)
+        #Inicial con solo una op
+        self.vista.rbt_unaOP.setChecked(True)
+        self.unaOp()
         
         
     def evtEditingFinishedOpLLenarInfo(self):
@@ -120,24 +149,8 @@ class ControllerFormulario:
         cliente= self.model_op.ConsultaCliente(op)
         if cliente != None:
             self.vista.txt_cliente.setText(cliente[0])
-            self.llenar_cbb_productos(op)
         else:
             self.evtLimpiaraCampos()
-
-    def llenar_cbb_productos(self, op):
-        '''
-            Descripcion:  
-                Para cargar los pructos al combo box, apartir de una op
-
-            Agrs:
-                op: Numero de folio de la op
-        '''
-        self.vista.cbb_productos.clear() 
-        conceptos_list =  self.model_op.ConsultaProducctos(op)
-
-        for fila in conceptos_list:
-            producto = fila[0]
-            self.vista.cbb_productos.addItem(producto)
 
     def evtAgregarActididad(self):
         '''
@@ -151,20 +164,41 @@ class ControllerFormulario:
             else :
                 HoraMinutos = "H"
 
-            op = QStandardItem(self.vista.txt_op.text() )
-            modo = QStandardItem(HoraMinutos)
-            tiempo = QStandardItem(self.vista.txt_tiempo.text())
-            departamento = QStandardItem(self.vista.cbb_departamento.currentText())
-            concepto = QStandardItem(self.vista.cbb_actividad.currentText())
-            self.tabla_activiades_modelo.appendRow([op, modo, tiempo, departamento, concepto])
-            self.vista.tbl_actividad.setModel(self.tabla_activiades_modelo)
+            #POR OP
+            if self.vista.rbt_unaOP.isChecked() :
+                op = QStandardItem(self.vista.txt_op.text() )
+                modo = QStandardItem(HoraMinutos)
+                tiempo = QStandardItem(self.vista.txt_tiempo.text())
+                departamento = QStandardItem(self.vista.cbb_departamento.currentText())
+                concepto = QStandardItem(self.vista.cbb_actividad.currentText())
+                self.tabla_activiades_modelo.appendRow([op, modo, tiempo, departamento, concepto])
+                self.vista.tbl_actividad.setModel(self.tabla_activiades_modelo)
+            #VARIAS OP
+            elif self.vista.rbt_variasOPs.isChecked() : 
+                minutos = int(self.vista.txt_tiempo.text())
+                if HoraMinutos == "H":
+                    minutos =  int(self.vista.txt_tiempo.text()) * 60
+                filas = self.model_ops.rowCount()
+                tiempo_individual = int(minutos/int(filas)) 
+                for fila in range(filas):
+                    item = self.model_ops.item(fila, 0)
+                    if item is not None :
+                        op = QStandardItem(item.text())
+                        modo = QStandardItem("M")
+                        tiempo = QStandardItem(str(tiempo_individual))
+                        departamento = QStandardItem(self.vista.cbb_departamento.currentText())
+                        concepto = QStandardItem(self.vista.cbb_actividad.currentText())
+                        self.tabla_activiades_modelo.appendRow([op, modo, tiempo, departamento, concepto])
+                        self.vista.tbl_actividad.setModel(self.tabla_activiades_modelo)
+            #POR PROYECTO
+            elif  self.vista.rbt_proyectos.setChecked().isChecked() : 
+                pass
+            
             self.evtLimpiaraCampos()
             self.vista.txt_tiempo.setText("")
+
         else :
-            self.mensaje = QtWidgets.QMessageBox()
-            self.mensaje.setIcon(QtWidgets.QMessageBox.Information)
             self.mensaje.setText( "Debes ingresar el tiempo que tardaste haciendo esa actividad")
-            self.mensaje.setWindowTitle("Informacion")
             self.mensaje.exec_()
 
     def evtLimpiaraCampos(self):
@@ -174,7 +208,6 @@ class ControllerFormulario:
         '''
         self.vista.txt_cliente.setText("")
         self.vista.txt_op.setText("")
-        self.vista.cbb_productos.clear()
 
     def evtQuitarElemento(self):
         '''
@@ -246,9 +279,84 @@ class ControllerFormulario:
                 self.model_base_conceptos.BaseConceptosInsert(base_concepto )
         self.tabla_activiades_modelo.clear()
         self.tabla_activiades_modelo.setHorizontalHeaderLabels(["op", "Modo","Tiempo","Departamento","Concepto"])
+        self.model_ops.clear()
         self.vista.tbl_actividad.setModel(self.tabla_activiades_modelo)
         self.mensaje = QtWidgets.QMessageBox()
         self.mensaje.setIcon(QtWidgets.QMessageBox.Information)
         self.mensaje.setText( "Actididades Guardadas")
         self.mensaje.setWindowTitle("Informacion")
         self.mensaje.exec_()
+
+    def evtAgregarOpList(self):
+        '''
+            Descripcion: 
+            Agregar un elemento a la lista de Ops 
+        '''
+        if self.vista.txt_op.text() != "" :
+            filas = self.model_ops.rowCount()
+            for fila in range(filas):
+                    item = self.model_ops.item(fila, 0)
+                    if item is not None and item.text() == self.vista.txt_op.text():
+                        self.evtLimpiaraCampos()
+                        self.mensaje.setText( "OP ya agregada" + item.text())
+                        self.mensaje.exec_()
+                        return
+            concepto = QStandardItem(self.vista.txt_op.text())
+            self.model_ops.appendRow(concepto)
+            self.vista.lsv_ops.setModel(self.model_ops)
+            self.evtLimpiaraCampos()
+
+
+    def evtQuitarOPList(self):
+        '''
+            Descripcion: 
+                Eliminar un elemento seleccionado de la lista
+        '''
+        modelo = self.vista.lsv_ops.model()
+        indices_seleccionados = self.vista.lsv_ops.selectionModel().selectedRows()
+        for indice in sorted(indices_seleccionados, reverse=True):
+            modelo.removeRow(indice.row())
+        self.vista.lsv_ops.update()
+
+
+    def unaOp(self):
+        '''
+            Descripcion:
+                Ocultar los elementos necesarios cuando sea para solo una op
+        '''
+        self.vista.lsv_ops.setVisible(False)
+        self.vista.btn_nuevoProyecto.setVisible(False)
+        self.vista.btn_agregarOP.setVisible(False)
+        self.vista.btn_quitarOP.setVisible(False)
+        self.vista.lbl_listaProyectos.setVisible(False)
+        self.vista.cbb_listaProyectos.setVisible(False)
+        self.vista.lbl_documentos.setVisible(False)
+        self.vista.cbb_documentos.setVisible(False)
+
+    def variasOps(self):
+        '''
+            Descripcion:
+                Ocultar los elementos necesarios cuando sea para varias op
+        '''
+        self.vista.lsv_ops.setVisible(True)
+        self.vista.btn_nuevoProyecto.setVisible(False)
+        self.vista.btn_agregarOP.setVisible(True)
+        self.vista.btn_quitarOP.setVisible(True)
+        self.vista.lbl_listaProyectos.setVisible(False)
+        self.vista.cbb_listaProyectos.setVisible(False)
+        self.vista.lbl_documentos.setVisible(False)
+        self.vista.cbb_documentos.setVisible(False)
+
+    def porProyeto(self):
+        '''
+            Descripcion:
+                Ocultar los elementos necesarios cuando no tenga op, sea por proyecto
+        '''
+        self.vista.lsv_ops.setVisible(False)
+        self.vista.btn_nuevoProyecto.setVisible(True)
+        self.vista.btn_agregarOP.setVisible(False)
+        self.vista.btn_quitarOP.setVisible(False)
+        self.vista.lbl_listaProyectos.setVisible(True)
+        self.vista.cbb_listaProyectos.setVisible(True)
+        self.vista.lbl_documentos.setVisible(True)
+        self.vista.cbb_documentos.setVisible(True)

@@ -141,8 +141,8 @@ class Ui_frm_nuevoProyecto(object):
         self.lbl_documento.setObjectName("lbl_documento")
 
         self.retranslateUi(frm_nuevoProyecto)
-        self.btn_box.accepted.connect(frm_nuevoProyecto.accept) # type: ignore
-        self.btn_box.rejected.connect(frm_nuevoProyecto.reject) # type: ignore
+        #self.btn_box.accepted.connect(frm_nuevoProyecto.accept) # type: ignore
+        #self.btn_box.rejected.connect(frm_nuevoProyecto.reject) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(frm_nuevoProyecto)
         frm_nuevoProyecto.setTabOrder(self.txt_nombreProyecto, self.txt_alias)
         frm_nuevoProyecto.setTabOrder(self.txt_alias, self.cbb_contacto)
