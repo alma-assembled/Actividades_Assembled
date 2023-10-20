@@ -1,4 +1,5 @@
 from Models.departamentosModel import BaseDepartamentos, ModelDepartamento
+from Models.catalogoTipodDocumentosModel import ModelCatalogoTiposDocumentos
 from Models.catalogoConceptosModel import ModelCatalagoConceptos, CatalagoConceptos
 
 class ControllerComun:
@@ -26,7 +27,17 @@ class ControllerComun:
 
         for fila in conceptos_list:
             c = CatalagoConceptos(fila[1],fila[0])
-            comboBox.addItem(c.concepto)     
+            comboBox.addItem(c.concepto)
+
+    def llenarCbDocumentos(self, comboBox):
+        '''
+            Llenar el combo box: Tipo de documento
+        '''
+        self.model = ModelCatalogoTiposDocumentos()
+        documentos_list =  self.model.tipoDocumentosAll()[0]
+
+        for fila in documentos_list:
+            comboBox.addItem(fila[0])
     
 '''if __name__ == "__main__":
     ventana_principal = ControllerComun()

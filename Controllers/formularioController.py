@@ -44,6 +44,7 @@ class ControllerFormulario:
         self.vista.rbt_horas.toggled.connect(self.evtRadio_button_toggled)
         self.vista.rbt_minutos.toggled.connect(self.evtRadio_button_toggled)
         self.controllerComon.llenarCbDepartameto(self.vista.cbb_departamento)
+        self.controllerComon.llenarCbDocumentos(self.vista.cbb_documentos)
         self.vista.rbt_variasOPs.clicked.connect(self.variasOps)
         self.vista.rbt_unaOP.clicked.connect(self.unaOp)
         self.vista.rbt_proyectos.clicked.connect(self.porProyeto)
