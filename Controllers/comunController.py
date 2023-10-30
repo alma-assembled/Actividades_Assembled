@@ -1,6 +1,7 @@
 from Models.departamentosModel import BaseDepartamentos, ModelDepartamento
 from Models.catalogoTipodDocumentosModel import ModelCatalogoTiposDocumentos
 from Models.catalogoConceptosModel import ModelCatalagoConceptos, CatalagoConceptos
+from Models.baseProyectosModel import ModelProyectos
 
 class ControllerComun:
     def __init__(self):
@@ -33,12 +34,70 @@ class ControllerComun:
         '''
             Llenar el combo box: Tipo de documento
         '''
+        comboBox.clear() 
         self.model = ModelCatalogoTiposDocumentos()
-        documentos_list =  self.model.tipoDocumentosAll()[0]
+        documentos_list =  self.model.tipoDocumentosAll()
+
+        for fila in documentos_list:
+            comboBox.addItem(fila[0],fila[1])
+    
+    def llenarCbProyectos(self, comboBox):
+        '''
+            Llenar el combo box: Proyectos
+        '''
+        comboBox.clear() 
+        self.model = ModelProyectos()
+        documentos_list =  self.model.proyectosAll()
 
         for fila in documentos_list:
             comboBox.addItem(fila[0])
+
+    def llenarCbProyectosByIdCliente(self, comboBox, idCliente):
+        '''
+            Llenar el combo box: Proyectos
+            id_cliente
+        '''
+        comboBox.clear() 
+        self.model = ModelProyectos()
+        documentos_list =  self.model.proyectosAllByIdCliente(idCliente)
+
+        for fila in documentos_list:
+            comboBox.addItem(fila[0],fila[1])
+
+    def llenarCbClientes(self, comboBox):
+        '''
+            Llenar el combo box: Clientes         
+        '''
+        comboBox.clear() 
+        self.model = ModelProyectos()
+        clientes_list =  self.model.clientesAll()
+
+        for fila in clientes_list:
+            comboBox.addItem(fila[0], fila[1])
+            
     
+    def llenarCbContactos(self, comboBox, idCliente):
+        '''
+            Llenar el combo box: Contactos, apartir de un idCliente
+        '''
+        comboBox.clear()
+        self.model = ModelProyectos()
+        contactos_list = self.model.contactosAllbyIdRazonSocial(idCliente)
+
+        for fila in contactos_list:
+            comboBox.addItem(fila[0],fila[1])
+
+    def llenarCbDomicilios(self, comboBox, idCliente):
+        '''
+            Llenar el combo box: Contactos, apartir de un idCliente
+        '''
+        comboBox.clear()
+        self.model = ModelProyectos()
+        domicilios_list = self.model.domiciliosByIdCliente(idCliente)
+
+        for fila in domicilios_list:
+            comboBox.addItem(fila[0],fila[1])
+
 '''if __name__ == "__main__":
     ventana_principal = ControllerComun()
     ventana_principal.llenarModel()'''

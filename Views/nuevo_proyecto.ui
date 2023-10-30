@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>440</width>
-    <height>300</height>
+    <width>438</width>
+    <height>339</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,8 +19,8 @@
   <widget class="QDialogButtonBox" name="btn_box">
    <property name="geometry">
     <rect>
-     <x>270</x>
-     <y>260</y>
+     <x>266</x>
+     <y>302</y>
      <width>160</width>
      <height>28</height>
     </rect>
@@ -54,10 +54,7 @@
    </property>
    <property name="font">
     <font>
-     <family>Arial</family>
      <pointsize>-1</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
     </font>
    </property>
    <property name="styleSheet">
@@ -83,7 +80,6 @@ background-color: rgb(6, 91, 103);</string>
    </property>
    <property name="font">
     <font>
-     <family>Arial</family>
      <pointsize>-1</pointsize>
     </font>
    </property>
@@ -135,18 +131,15 @@ color: rgb(6, 91, 103);</string>
   <widget class="QLabel" name="lbl_contacto">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>128</y>
+     <x>6</x>
+     <y>170</y>
      <width>70</width>
      <height>24</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>Arial</family>
      <pointsize>-1</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
     </font>
    </property>
    <property name="styleSheet">
@@ -160,8 +153,8 @@ color: rgb(6, 91, 103);</string>
   <widget class="QComboBox" name="cbb_contacto">
    <property name="geometry">
     <rect>
-     <x>82</x>
-     <y>128</y>
+     <x>78</x>
+     <y>170</y>
      <width>348</width>
      <height>28</height>
     </rect>
@@ -180,8 +173,8 @@ color: rgb(6, 91, 103);</string>
   <widget class="QComboBox" name="cbb_domicilio">
    <property name="geometry">
     <rect>
-     <x>82</x>
-     <y>168</y>
+     <x>78</x>
+     <y>210</y>
      <width>348</width>
      <height>28</height>
     </rect>
@@ -200,18 +193,15 @@ color: rgb(6, 91, 103);</string>
   <widget class="QLabel" name="lbl_domicilio">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>168</y>
+     <x>6</x>
+     <y>210</y>
      <width>70</width>
      <height>24</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>Arial</family>
      <pointsize>-1</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
     </font>
    </property>
    <property name="styleSheet">
@@ -225,8 +215,8 @@ color: rgb(6, 91, 103);</string>
   <widget class="QLineEdit" name="txt_folio">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>208</y>
+     <x>6</x>
+     <y>250</y>
      <width>110</width>
      <height>32</height>
     </rect>
@@ -252,8 +242,8 @@ color: rgb(6, 91, 103);</string>
   <widget class="QComboBox" name="cbb_documento">
    <property name="geometry">
     <rect>
-     <x>300</x>
-     <y>208</y>
+     <x>296</x>
+     <y>250</y>
      <width>130</width>
      <height>24</height>
     </rect>
@@ -272,18 +262,15 @@ color: rgb(6, 91, 103);</string>
   <widget class="QLabel" name="lbl_documento">
    <property name="geometry">
     <rect>
-     <x>214</x>
-     <y>208</y>
+     <x>210</x>
+     <y>250</y>
      <width>80</width>
      <height>24</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>Arial</family>
      <pointsize>-1</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
     </font>
    </property>
    <property name="styleSheet">
@@ -292,6 +279,48 @@ color: rgb(6, 91, 103);</string>
    </property>
    <property name="text">
     <string>DOCUMENTO</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbl_contacto_2">
+   <property name="geometry">
+    <rect>
+     <x>8</x>
+     <y>130</y>
+     <width>70</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">  font-size: 12px;
+color: rgb(6, 91, 103);</string>
+   </property>
+   <property name="text">
+    <string>CLIENTE</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="cbb_cliente">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>130</y>
+     <width>348</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"> color: rgb(255, 255, 255);
+    background-color: rgb(6, 91, 103);</string>
    </property>
   </widget>
  </widget>

@@ -13,7 +13,7 @@ class ModelCatalagoConceptos:
     def catalagoConceptosByDepartamento(self, idDepartamento):
         self.c = cn.DataBase()
         try:  
-          x="SELECT ID_CCONCEPTO, CONCEPTO FROM OPS.Catalogo_Conceptos where ID_RHCATDEPARTAMENTOS="+str(idDepartamento)+";"
+          x="SELECT ID_CCONCEPTO, CONCEPTO FROM OPS.Catalogo_Conceptos where ID_RHCATDEPARTAMENTOS="+str(idDepartamento)+" order by CONCEPTO;"
           self.c.cursor.execute(x)
           self.c.connection.commit()
           r=self.c.cursor.fetchall()

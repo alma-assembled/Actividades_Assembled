@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'Views\formulario.ui'
+# Form implementation generated from reading ui file 'formulario.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -31,6 +31,7 @@ class Ui_vfm_registroActs(object):
         self.txt_tiempo = QtWidgets.QLineEdit(self.vfm_registroActs_body)
         self.txt_tiempo.setGeometry(QtCore.QRect(170, 328, 50, 32))
         font = QtGui.QFont()
+        font.setPointSize(12)
         self.txt_tiempo.setFont(font)
         self.txt_tiempo.setFocusPolicy(QtCore.Qt.WheelFocus)
         self.txt_tiempo.setStyleSheet("width: 100%;\n"
@@ -47,7 +48,7 @@ class Ui_vfm_registroActs(object):
         self.txt_op = QtWidgets.QLineEdit(self.vfm_registroActs_body)
         self.txt_op.setGeometry(QtCore.QRect(170, 72, 110, 32))
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        font.setPointSize(12)
         self.txt_op.setFont(font)
         self.txt_op.setCursor(QtGui.QCursor(QtCore.Qt.IBeamCursor))
         self.txt_op.setFocusPolicy(QtCore.Qt.WheelFocus)
@@ -82,6 +83,7 @@ class Ui_vfm_registroActs(object):
         self.lbl_nombre.setGeometry(QtCore.QRect(170, 44, 320, 24))
         font = QtGui.QFont()
         font.setFamily("Arial")
+        font.setPointSize(12)
         font.setBold(False)
         font.setItalic(False)
         font.setWeight(50)
@@ -97,6 +99,7 @@ class Ui_vfm_registroActs(object):
         self.txt_cliente.setEnabled(False)
         self.txt_cliente.setGeometry(QtCore.QRect(280, 72, 320, 32))
         font = QtGui.QFont()
+        font.setPointSize(12)
         self.txt_cliente.setFont(font)
         self.txt_cliente.setFocusPolicy(QtCore.Qt.NoFocus)
         self.txt_cliente.setStyleSheet("width: 100%;\n"
@@ -113,6 +116,7 @@ class Ui_vfm_registroActs(object):
         self.lbl_departamento = QtWidgets.QLabel(self.vfm_registroActs_body)
         self.lbl_departamento.setGeometry(QtCore.QRect(170, 180, 100, 24))
         font = QtGui.QFont()
+        font.setPointSize(12)
         self.lbl_departamento.setFont(font)
         self.lbl_departamento.setStyleSheet("  font-size: 12px;\n"
 "color: rgb(6, 91, 103);;")
@@ -120,6 +124,7 @@ class Ui_vfm_registroActs(object):
         self.lbl_actividad = QtWidgets.QLabel(self.vfm_registroActs_body)
         self.lbl_actividad.setGeometry(QtCore.QRect(170, 242, 72, 24))
         font = QtGui.QFont()
+        font.setPointSize(12)
         self.lbl_actividad.setFont(font)
         self.lbl_actividad.setStyleSheet("  font-size: 12px;\n"
 "color: rgb(6, 91, 103);")
@@ -216,18 +221,30 @@ class Ui_vfm_registroActs(object):
         self.tbl_actividad.setEnabled(True)
         self.tbl_actividad.setGeometry(QtCore.QRect(170, 370, 570, 252))
         font = QtGui.QFont()
-        font.setFamily("Lucida Sans Unicode")
+        font.setFamily("Lucida Sans Unicode,Lucida Grande,Sans-Serif")
+        font.setPointSize(12)
         self.tbl_actividad.setFont(font)
         self.tbl_actividad.setFocusPolicy(QtCore.Qt.WheelFocus)
         self.tbl_actividad.setStyleSheet("font-family: \"Lucida Sans Unicode\", \"Lucida Grande\", Sans-Serif;\n"
-"    font-size: 12px;       width: 480px; text-align: left;    border-\n"
-"\n"
-"th {     font-size: 13px;     font-weight: normal;     padding: 8px;     background: #b9c9fe;\n"
-"    border-top: 4px solid #aabcfe;    border-bottom: 1px solid #fff; color: #039; }\n"
-"\n"
-"td {    padding: 8px;     background: #e8edff;     border-bottom: 1px solid #fff;\n"
-"    color: #669;    border-top: 1px solid transparent; }\n"
-"\n"
+"font-size: 12px;\n"
+"width: 480px;\n"
+"text-align: left;\n"
+"border-th {\n"
+"    font-size: 13px;\n"
+"    font-weight: normal;\n"
+"    padding: 8px;\n"
+"    background: #b9c9fe;\n"
+"    border-top: 4px solid #aabcfe;\n"
+"    border-bottom: 1px solid #fff;\n"
+"    color: #039;\n"
+"}\n"
+"td {\n"
+"    padding: 8px;\n"
+"    background: #e8edff;\n"
+"    border-bottom: 1px solid #fff;\n"
+"    color: #669;\n"
+"    border-top: 1px solid transparent;\n"
+"}\n"
 "tr:hover td { background: #d0dafd; color: #339; }")
         self.tbl_actividad.setObjectName("tbl_actividad")
         self.gbo_tipoRegistro = QtWidgets.QGroupBox(self.vfm_registroActs_body)
@@ -254,7 +271,7 @@ class Ui_vfm_registroActs(object):
         self.rbt_variasOPs.setFocusPolicy(QtCore.Qt.WheelFocus)
         self.rbt_variasOPs.setObjectName("rbt_variasOPs")
         self.rbt_proyectos = QtWidgets.QRadioButton(self.gbo_tipoRegistro)
-        self.rbt_proyectos.setGeometry(QtCore.QRect(194, 10, 104, 24))
+        self.rbt_proyectos.setGeometry(QtCore.QRect(200, 10, 104, 24))
         font = QtGui.QFont()
         font.setFamily("Arial")
         font.setPointSize(8)
@@ -305,6 +322,7 @@ class Ui_vfm_registroActs(object):
         self.lbl_documentos = QtWidgets.QLabel(self.vfm_registroActs_body)
         self.lbl_documentos.setGeometry(QtCore.QRect(500, 110, 78, 24))
         font = QtGui.QFont()
+        font.setPointSize(12)
         self.lbl_documentos.setFont(font)
         self.lbl_documentos.setStyleSheet("  font-size: 12px;\n"
 "color: rgb(6, 91, 103);;")
@@ -318,6 +336,7 @@ class Ui_vfm_registroActs(object):
         self.lbl_listaProyectos = QtWidgets.QLabel(self.vfm_registroActs_body)
         self.lbl_listaProyectos.setGeometry(QtCore.QRect(170, 110, 132, 24))
         font = QtGui.QFont()
+        font.setPointSize(12)
         self.lbl_listaProyectos.setFont(font)
         self.lbl_listaProyectos.setStyleSheet("  font-size: 12px;\n"
 "color: rgb(6, 91, 103);;")
@@ -331,6 +350,23 @@ class Ui_vfm_registroActs(object):
         self.cbb_listaProyectos.setStyleSheet(" color: rgb(255, 255, 255);\n"
 "    background-color: rgb(6, 91, 103);")
         self.cbb_listaProyectos.setObjectName("cbb_listaProyectos")
+        self.cbb_cliente = QtWidgets.QComboBox(self.vfm_registroActs_body)
+        self.cbb_cliente.setGeometry(QtCore.QRect(350, 70, 321, 31))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(12)
+        self.cbb_cliente.setFont(font)
+        self.cbb_cliente.setStyleSheet(" color: rgb(255, 255, 255);\n"
+"    background-color: rgb(6, 91, 103);")
+        self.cbb_cliente.setObjectName("cbb_cliente")
+        self.lbl_cliente = QtWidgets.QLabel(self.vfm_registroActs_body)
+        self.lbl_cliente.setGeometry(QtCore.QRect(290, 70, 61, 24))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.lbl_cliente.setFont(font)
+        self.lbl_cliente.setStyleSheet("  font-size: 12px;\n"
+"color: rgb(6, 91, 103);;")
+        self.lbl_cliente.setObjectName("lbl_cliente")
         vfm_registroActs.setCentralWidget(self.vfm_registroActs_body)
         self.vfm_registroActs_statusb = QtWidgets.QStatusBar(vfm_registroActs)
         self.vfm_registroActs_statusb.setObjectName("vfm_registroActs_statusb")
@@ -380,6 +416,7 @@ class Ui_vfm_registroActs(object):
         self.lbl_documentos.setText(_translate("vfm_registroActs", "DOCUMENTO"))
         self.btn_nuevoProyecto.setText(_translate("vfm_registroActs", "NUEVO PROYECTO"))
         self.lbl_listaProyectos.setText(_translate("vfm_registroActs", "LISTA DE PROYECTOS"))
+        self.lbl_cliente.setText(_translate("vfm_registroActs", "CLIENTE"))
 import Views.recursos_AA
 
 

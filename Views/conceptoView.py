@@ -80,8 +80,8 @@ class Ui_DilogConceptos(object):
         self.lineEdit.setObjectName("lineEdit")
 
         self.retranslateUi(DilogConceptos)
-        self.btn_box.accepted.connect(DilogConceptos.accept) # type: ignore
-        self.btn_box.rejected.connect(DilogConceptos.reject) # type: ignore
+        #self.btn_box.accepted.connect(DilogConceptos.accept) # type: ignore
+        #self.btn_box.rejected.connect(DilogConceptos.reject) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(DilogConceptos)
         DilogConceptos.setTabOrder(self.cbb_departamento_frmC, self.lineEdit)
         DilogConceptos.setTabOrder(self.lineEdit, self.btn_box)

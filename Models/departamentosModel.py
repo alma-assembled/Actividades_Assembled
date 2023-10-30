@@ -13,7 +13,7 @@ class ModelDepartamento:
 
     def baseDepartamentosAll(self):
         try:  
-          x="SELECT ID_RHCDEPARTAMENTO, DEPARTAMENTO FROM OPS.RH_Cat_Departamentos;"
+          x="SELECT ID_RHCDEPARTAMENTO, DEPARTAMENTO FROM OPS.RH_Cat_Departamentos  order by DEPARTAMENTO;"
           #x="SELECT ID_RHCPUESTO, PUESTO FROM OPS.RH_Cat_Puestos;"   #puestos
           self.c.cursor.execute(x)
           self.c.connection.commit()
