@@ -2,12 +2,13 @@ import Models.connection as cn
 import pymysql
 
 class BaseConceptos:
-    def __init__(self, idOp, idCConcepto, idBTareas  , tiempo, modo ) :
+    def __init__(self, idOp, idCConcepto, idBTareas  , tiempo, modo, id_BDocuementoProyectos ) :
         self.idOp = idOp
         self.idCConcepto = idCConcepto
         self.idBTareas = idBTareas 
         self.tiempo = tiempo
         self.modo  = modo
+        self.id_BDocuementoProyectos = id_BDocuementoProyectos
 
 class ModelBaseConceptos:
     def __init__(self):

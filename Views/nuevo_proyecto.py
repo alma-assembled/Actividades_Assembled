@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'Views\nuevo_proyecto.ui'
+# Form implementation generated from reading ui file 'nuevo_proyecto.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -14,10 +14,10 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_frm_nuevoProyecto(object):
     def setupUi(self, frm_nuevoProyecto):
         frm_nuevoProyecto.setObjectName("frm_nuevoProyecto")
-        frm_nuevoProyecto.resize(440, 300)
+        frm_nuevoProyecto.resize(438, 339)
         frm_nuevoProyecto.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.btn_box = QtWidgets.QDialogButtonBox(frm_nuevoProyecto)
-        self.btn_box.setGeometry(QtCore.QRect(270, 260, 160, 28))
+        self.btn_box.setGeometry(QtCore.QRect(266, 302, 160, 28))
         self.btn_box.setFocusPolicy(QtCore.Qt.WheelFocus)
         self.btn_box.setStyleSheet("bottom: -100%;\n"
 "  left: 0;\n"
@@ -31,9 +31,7 @@ class Ui_frm_nuevoProyecto(object):
         self.lbl_titulofrm = QtWidgets.QLabel(frm_nuevoProyecto)
         self.lbl_titulofrm.setGeometry(QtCore.QRect(0, 0, 440, 40))
         font = QtGui.QFont()
-        font.setFamily("Arial")
-        font.setBold(True)
-        font.setWeight(75)
+        font.setPointSize(12)
         self.lbl_titulofrm.setFont(font)
         self.lbl_titulofrm.setStyleSheet("  font-size: 18px;\n"
 "color: rgb(255, 255, 255);\n"
@@ -43,7 +41,7 @@ class Ui_frm_nuevoProyecto(object):
         self.txt_nombreProyecto = QtWidgets.QLineEdit(frm_nuevoProyecto)
         self.txt_nombreProyecto.setGeometry(QtCore.QRect(10, 48, 420, 32))
         font = QtGui.QFont()
-        font.setFamily("Arial")
+        font.setPointSize(12)
         self.txt_nombreProyecto.setFont(font)
         self.txt_nombreProyecto.setFocusPolicy(QtCore.Qt.WheelFocus)
         self.txt_nombreProyecto.setStyleSheet("width: 100%;\n"
@@ -70,17 +68,15 @@ class Ui_frm_nuevoProyecto(object):
 "color: rgb(6, 91, 103);")
         self.txt_alias.setObjectName("txt_alias")
         self.lbl_contacto = QtWidgets.QLabel(frm_nuevoProyecto)
-        self.lbl_contacto.setGeometry(QtCore.QRect(10, 128, 70, 24))
+        self.lbl_contacto.setGeometry(QtCore.QRect(6, 170, 70, 24))
         font = QtGui.QFont()
-        font.setFamily("Arial")
-        font.setBold(True)
-        font.setWeight(75)
+        font.setPointSize(12)
         self.lbl_contacto.setFont(font)
         self.lbl_contacto.setStyleSheet("  font-size: 12px;\n"
 "color: rgb(6, 91, 103);")
         self.lbl_contacto.setObjectName("lbl_contacto")
         self.cbb_contacto = QtWidgets.QComboBox(frm_nuevoProyecto)
-        self.cbb_contacto.setGeometry(QtCore.QRect(82, 128, 348, 28))
+        self.cbb_contacto.setGeometry(QtCore.QRect(78, 170, 348, 28))
         font = QtGui.QFont()
         font.setFamily("Arial")
         font.setPointSize(12)
@@ -89,7 +85,7 @@ class Ui_frm_nuevoProyecto(object):
 "    background-color: rgb(6, 91, 103);")
         self.cbb_contacto.setObjectName("cbb_contacto")
         self.cbb_domicilio = QtWidgets.QComboBox(frm_nuevoProyecto)
-        self.cbb_domicilio.setGeometry(QtCore.QRect(82, 168, 348, 28))
+        self.cbb_domicilio.setGeometry(QtCore.QRect(78, 210, 348, 28))
         font = QtGui.QFont()
         font.setFamily("Arial")
         font.setPointSize(12)
@@ -98,17 +94,15 @@ class Ui_frm_nuevoProyecto(object):
 "    background-color: rgb(6, 91, 103);")
         self.cbb_domicilio.setObjectName("cbb_domicilio")
         self.lbl_domicilio = QtWidgets.QLabel(frm_nuevoProyecto)
-        self.lbl_domicilio.setGeometry(QtCore.QRect(10, 168, 70, 24))
+        self.lbl_domicilio.setGeometry(QtCore.QRect(6, 210, 70, 24))
         font = QtGui.QFont()
-        font.setFamily("Arial")
-        font.setBold(True)
-        font.setWeight(75)
+        font.setPointSize(12)
         self.lbl_domicilio.setFont(font)
         self.lbl_domicilio.setStyleSheet("  font-size: 12px;\n"
 "color: rgb(6, 91, 103);")
         self.lbl_domicilio.setObjectName("lbl_domicilio")
         self.txt_folio = QtWidgets.QLineEdit(frm_nuevoProyecto)
-        self.txt_folio.setGeometry(QtCore.QRect(10, 208, 110, 32))
+        self.txt_folio.setGeometry(QtCore.QRect(6, 250, 110, 32))
         self.txt_folio.setFocusPolicy(QtCore.Qt.WheelFocus)
         self.txt_folio.setStyleSheet("width: 100%;\n"
 "  padding: 6px;\n"
@@ -121,7 +115,7 @@ class Ui_frm_nuevoProyecto(object):
 "color: rgb(6, 91, 103);")
         self.txt_folio.setObjectName("txt_folio")
         self.cbb_documento = QtWidgets.QComboBox(frm_nuevoProyecto)
-        self.cbb_documento.setGeometry(QtCore.QRect(300, 208, 130, 24))
+        self.cbb_documento.setGeometry(QtCore.QRect(296, 250, 130, 24))
         font = QtGui.QFont()
         font.setFamily("Arial")
         font.setPointSize(12)
@@ -130,19 +124,34 @@ class Ui_frm_nuevoProyecto(object):
 "    background-color: rgb(6, 91, 103);")
         self.cbb_documento.setObjectName("cbb_documento")
         self.lbl_documento = QtWidgets.QLabel(frm_nuevoProyecto)
-        self.lbl_documento.setGeometry(QtCore.QRect(214, 208, 80, 24))
+        self.lbl_documento.setGeometry(QtCore.QRect(210, 250, 80, 24))
         font = QtGui.QFont()
-        font.setFamily("Arial")
-        font.setBold(True)
-        font.setWeight(75)
+        font.setPointSize(12)
         self.lbl_documento.setFont(font)
         self.lbl_documento.setStyleSheet("  font-size: 12px;\n"
 "color: rgb(6, 91, 103);")
         self.lbl_documento.setObjectName("lbl_documento")
+        self.lbl_contacto_2 = QtWidgets.QLabel(frm_nuevoProyecto)
+        self.lbl_contacto_2.setGeometry(QtCore.QRect(8, 130, 70, 24))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.lbl_contacto_2.setFont(font)
+        self.lbl_contacto_2.setStyleSheet("  font-size: 12px;\n"
+"color: rgb(6, 91, 103);")
+        self.lbl_contacto_2.setObjectName("lbl_contacto_2")
+        self.cbb_cliente = QtWidgets.QComboBox(frm_nuevoProyecto)
+        self.cbb_cliente.setGeometry(QtCore.QRect(80, 130, 348, 28))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(12)
+        self.cbb_cliente.setFont(font)
+        self.cbb_cliente.setStyleSheet(" color: rgb(255, 255, 255);\n"
+"    background-color: rgb(6, 91, 103);")
+        self.cbb_cliente.setObjectName("cbb_cliente")
 
         self.retranslateUi(frm_nuevoProyecto)
-        self.btn_box.accepted.connect(frm_nuevoProyecto.accept) # type: ignore
-        self.btn_box.rejected.connect(frm_nuevoProyecto.reject) # type: ignore
+        #self.btn_box.accepted.connect(frm_nuevoProyecto.accept) # type: ignore
+        #self.btn_box.rejected.connect(frm_nuevoProyecto.reject) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(frm_nuevoProyecto)
         frm_nuevoProyecto.setTabOrder(self.txt_nombreProyecto, self.txt_alias)
         frm_nuevoProyecto.setTabOrder(self.txt_alias, self.cbb_contacto)
@@ -161,6 +170,7 @@ class Ui_frm_nuevoProyecto(object):
         self.lbl_domicilio.setText(_translate("frm_nuevoProyecto", "DOMICILIO"))
         self.txt_folio.setPlaceholderText(_translate("frm_nuevoProyecto", "FOLIO"))
         self.lbl_documento.setText(_translate("frm_nuevoProyecto", "DOCUMENTO"))
+        self.lbl_contacto_2.setText(_translate("frm_nuevoProyecto", "CLIENTE"))
 
 
 if __name__ == "__main__":

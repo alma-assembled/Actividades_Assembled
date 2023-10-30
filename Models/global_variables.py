@@ -3,3 +3,11 @@ class BdUsurio():
    nombre = "nombre"
    id_departamento = 0
    departamento = ""
+
+
+class DatosActividades():
+   bandera = False
+   cliente = ""
+   folio = ""
+   documento = ""
+   proyecto = ""
