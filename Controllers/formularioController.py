@@ -328,6 +328,7 @@ class ControllerFormulario:
                         agregar registro Base_DocumentosProyectos
                     '''
                     id_DocumentosProyectos = self.model_proyecto.insertDocumentosProyectos(modelo.data(op), proyecto_id, documento_id)
+                    #print(id_DocumentosProyectos,"---------------")
                     base_concepto = BaseConceptos(_op, concepto_id,  id_base_tarea, dato_tiempo, dato_tipo, id_DocumentosProyectos )
                     self.model_base_conceptos.BaseConceptosInsert_Op(base_concepto)
             else :   
@@ -335,7 +336,7 @@ class ControllerFormulario:
                 _op = 10
                 id_DocumentosProyectos = 1
                 base_concepto =BaseConceptos(_op, concepto_id,  id_base_tarea, dato_tiempo, dato_tipo, id_DocumentosProyectos)
-                self.model_base_conceptos.BaseConceptosInsert(base_concepto )
+                self.model_base_conceptos.BaseConceptosInsert_Op(base_concepto )
         self.tabla_activiades_modelo.clear()
         self.tabla_activiades_modelo.setHorizontalHeaderLabels(["OP/FOLIO", "MODO","TIEMPO","DEPARTAMENTO","CONCEPTO","PROYECTO","DOCUMENTO","CLIENTE"])
         self.model_ops.clear()
