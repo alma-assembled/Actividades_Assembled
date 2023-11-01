@@ -46,8 +46,8 @@ class ModelBaseConceptos:
 
     def BaseConceptosInsert_Op(self, BaseConceptos):
         self.c = cn.DataBase()
-        x="INSERT INTO `OPS`.`Base_Conceptos` (`ID_BOP`, `ID_CCONCEPTO`, `ID_BTAREA`, `TIEMPO`, `MODO`) VALUES (%s, %s, %s, %s, %s);"
-        v=(""+str(BaseConceptos.idOp)+"" , ""+ str(BaseConceptos.idCConcepto) + "" , ""+ str(BaseConceptos.idBTareas)  +"" , "" + str(BaseConceptos.tiempo) + "" , "" + str(BaseConceptos.modo)+"")
+        x="INSERT INTO `OPS`.`Base_Conceptos` (`ID_BOP`, `ID_CCONCEPTO`, `ID_BTAREA`, `TIEMPO`, `MODO`, ID_BDOCUMENTOPROYECTO) VALUES (%s, %s, %s, %s, %s, %s);"
+        v=(""+str(BaseConceptos.idOp)+"" , ""+ str(BaseConceptos.idCConcepto) + "" , ""+ str(BaseConceptos.idBTareas)  +"" , "" + str(BaseConceptos.tiempo) + "" , "" + str(BaseConceptos.modo)+ "" , "" + str(BaseConceptos.id_BDocuementoProyectos))
         try:  
             self.c.cursor.execute(x, v) 
             self.c.connection.commit()
