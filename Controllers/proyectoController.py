@@ -40,15 +40,15 @@ class ControllerProyecto:
             return
         
         contacto_id =  self.vista.cbb_contacto.itemData(self.vista.cbb_contacto.currentIndex())
-        documentos_id = self.vista.cbb_documento.itemData(self.vista.cbb_domicilio.currentIndex())
-        id_proyecto = self.model_proyecto.insertProyecto(self.vista.txt_nombreProyecto.text().upper(),self.vista.txt_alias.text().upper(), contacto_id, documentos_id)
+        domicilio_id = self.vista.cbb_documento.itemData(self.vista.cbb_domicilio.currentIndex())
+        id_proyecto = self.model_proyecto.insertProyecto(self.vista.txt_nombreProyecto.text().upper(),self.vista.txt_alias.text().upper(), contacto_id, domicilio_id)
         
         #inicalizar los datos
         DatosActividades.bandera = True
         DatosActividades.folio = self.vista.txt_folio.text().upper()
         DatosActividades.cliente = self.vista.cbb_cliente.currentText()
         DatosActividades.documento = self.vista.cbb_documento.currentText()
-        DatosActividades.proyecto =  self.vista.txt_nombreProyecto.text()
+        DatosActividades.proyecto =  self.vista.txt_nombreProyecto.text().upper()
 
         self.mensaje.setText("PROYECTO GUARDADO")
         self.mensaje.exec_()

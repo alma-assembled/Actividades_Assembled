@@ -153,6 +153,7 @@ class ControllerFormulario:
         '''
         if  DatosActividades.bandera == True:
             self.vista.txt_op.setText(DatosActividades.folio) 
+            self.vista.cbb_cliente.setCurrentText("0")
             self.vista.cbb_cliente.setCurrentText(DatosActividades.cliente)
             self.vista.cbb_documentos.setCurrentText(DatosActividades.documento)
             self.vista.cbb_listaProyectos.setCurrentText(DatosActividades.proyecto)
