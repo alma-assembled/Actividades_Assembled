@@ -12,8 +12,8 @@ class BaseConceptos:
 
 class ModelBaseConceptos:
     def __init__(self):
-        self.c = cn.DataBase()
-
+        pass
+    
     def BaseTareasAll(self):
         self.c = cn.DataBase()
         try:  
@@ -43,7 +43,6 @@ class ModelBaseConceptos:
             if hasattr(self, 'c'):
                 self.c.cursor.close()
   
-
     def BaseConceptosInsert_Op(self, BaseConceptos):
         self.c = cn.DataBase()
         x="INSERT INTO `OPS`.`Base_Conceptos` (`ID_BOP`, `ID_CCONCEPTO`, `ID_BTAREA`, `TIEMPO`, `MODO`, ID_BDOCUMENTOPROYECTO) VALUES (%s, %s, %s, %s, %s, %s);"
@@ -56,7 +55,6 @@ class ModelBaseConceptos:
         finally:
             if hasattr(self, 'c'):
                 self.c.cursor.close()
-
 
     def BaseConceptosInsert(self, BaseConceptos):
         self.c = cn.DataBase()

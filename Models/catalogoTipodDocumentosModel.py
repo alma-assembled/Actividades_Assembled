@@ -9,7 +9,8 @@ class CatalogoTiposDocumentos:
 class ModelCatalogoTiposDocumentos:
 
     def __init__(self):
-        self.c = cn.DataBase()
+        #self.c = cn.DataBase()
+        pass
 
     def tipoDocumentosAll(self):
         self.c = cn.DataBase()

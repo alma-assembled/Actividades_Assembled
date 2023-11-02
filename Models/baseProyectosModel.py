@@ -13,7 +13,7 @@ class BaseProyectosDocumentos:
 class ModelProyectos:
 
     def __init__(self):
-        self.c = cn.DataBase()
+        pass
 
     def proyectosAll(self):
         self.c = cn.DataBase()

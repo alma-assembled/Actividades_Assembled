@@ -26,7 +26,6 @@ class ModelBaseTarea:
             if hasattr(self, 'c'):
                 self.c.cursor.close()
 
-
     def BaseTareasById(self, ID_BTAREA):
         self.c = cn.DataBase()
         try:  
@@ -40,7 +39,6 @@ class ModelBaseTarea:
         finally:
             if hasattr(self, 'c'):
                 self.c.cursor.close()
-    
 
     def BaseTareasInsert(self, BaseTarea):
         self.c = cn.DataBase()
@@ -58,7 +56,6 @@ class ModelBaseTarea:
         finally:
             if hasattr(self, 'c'):
                 self.c.cursor.close()
-
 
     def selectIdentity(self):
         self.c = cn.DataBase()

@@ -4,8 +4,8 @@ import Models.connection as cn
 
 class opModel:
     def __init__(self):
-        self.c = cn.DataBase()
-        
+        #self.c = cn.DataBase()
+        pass
 
     def ConsultaCliente(self, op):
         self.c = cn.DataBase()
