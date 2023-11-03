@@ -153,8 +153,11 @@ class ControllerFormulario:
         '''
         if  DatosActividades.bandera == True:
             self.vista.txt_op.setText(DatosActividades.folio) 
-            self.vista.cbb_cliente.setCurrentText("0")
-            self.vista.cbb_cliente.setCurrentText(DatosActividades.cliente)
+
+            if self.vista.cbb_cliente.currentText() == DatosActividades.cliente :
+                self.evntChangedCbCliente()
+            
+            self.vista.cbb_cliente.setCurrentText(DatosActividades.cliente)    
             self.vista.cbb_documentos.setCurrentText(DatosActividades.documento)
             self.vista.cbb_listaProyectos.setCurrentText(DatosActividades.proyecto)
              #inicalizar los datos
@@ -385,8 +388,7 @@ class ControllerFormulario:
             Descripcion:
                 Para actualizar el combo box (Clientes) despues de haber seleccionado un (cliente)
         '''
-        self.model = ModelProyectos()
-        self.id_cliente = self.model.clienteByRazonSocial(self.vista.cbb_cliente.currentText())[0]
+        self.id_cliente = self.vista.cbb_cliente.itemData(self.vista.cbb_cliente.currentIndex())
         self.controllerComon.llenarCbProyectosByIdCliente(self.vista.cbb_listaProyectos, self.id_cliente)
 
 
